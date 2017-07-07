@@ -1,1 +1,59 @@
-/* Empty. Add your own CSS if you like */
+a.tab-item{
+  border: 0 !important;
+}
+
+[nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar {
+  background: url("../img/flower.jpg") 100%;
+}
+
+.bar-header{
+  height: 33% !important;
+}
+
+.linhaTab {
+  margin-top: 33%;
+}
+
+.linhaTabSearch{
+  margin-top:1%;
+}
+
+.col{
+  display: flex;
+  background-color: #ED5565;
+  border: 1px solid #DA4453;
+  margin: 1%;
+}
+
+.square {
+  position: relative;
+  width: 100%;
+  border: 1px solid #DA4453;
+  background-color: #ED5565;
+  margin: 5%;
+  /*background: url("../img/flower.jpg");/*/
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.tab-item-active .ion-ios-home{
+  color: #ED5565 !important;
+}
+
+.tab-item-active .ion-ios-search-strong{
+  color: #FFCE54 !important;
+}
+
+.tab-item-active .ion-ios-person{
+  color: #5D9CEC !important;
+}
