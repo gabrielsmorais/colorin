@@ -2,6 +2,10 @@ a.tab-item{
   border: 0 !important;
 }
 
+.linhaTabSearch{
+  margin-top:10%;
+}
+
 .col{
   display: flex;
   background-color: #ED5565;
@@ -62,3 +66,33 @@ img {
 }
 
 .linhaDescricao
+
+/* Configurações - aba Login*/
+
+.perfil label{
+  margin: 10px;
+}
+
+.buttons{
+  display: flex;
+  flex: auto;
+}
+
+.perfil .user {
+  margin-top: 150px;
+}
+
+.perfil .btnsin {
+  margin: auto;
+  width: 50%;
+  display: block;
+  width: 150px;
+  margin-top: -15px;
+}
+
+.perfil .btnsup {
+  margin: auto;
+  display: block;
+  width: 150px;
+  margin-top: -15px;
+}
