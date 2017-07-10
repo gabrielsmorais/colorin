@@ -80,11 +80,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('item', {
+  .state('tab.item', {
   url: '/item',
-  // abstract: true,
+  views: {
+  'tab-profile': {
   templateUrl: 'templates/tab-item.html',
   controller: 'ItemCtrl'
+    }
+  }
 })
 
   // .state('tab.profile.item', {

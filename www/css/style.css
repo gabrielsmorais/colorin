@@ -3,7 +3,7 @@ a.tab-item{
 }
 
 .linhaTabSearch{
-  margin-top:10%;
+  margin-top:50%;
 }
 
 .col{
@@ -11,6 +11,15 @@ a.tab-item{
   background-color: #ED5565;
   border: 5px solid #DA4453;
   margin: 1%;
+}
+
+
+.col-12{
+  display: flex;
+  background-color: #ED5565;
+  border: 5px solid #DA4453;
+  margin: 1%;
+  color: #5d9cec;
 }
 
 .square {
@@ -95,4 +104,8 @@ img {
   display: block;
   width: 150px;
   margin-top: -15px;
+}
+
+.bar .title.title-left {
+    padding-left: 38%
 }
