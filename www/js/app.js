@@ -80,6 +80,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('item', {
+  url: '/item',
+  // abstract: true,
+  templateUrl: 'templates/tab-item.html',
+  controller: 'ItemCtrl'
+})
+
+  // .state('tab.profile.item', {
+  //   url: '/item',
+  //   views: {
+  //     'tab-item': {
+  //       templateUrl: 'templates/tab-item.html',
+  //       controller: 'ItemCtrl'
+  //     }
+  //   }
+  // })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 

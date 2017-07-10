@@ -2,36 +2,19 @@ a.tab-item{
   border: 0 !important;
 }
 
-[nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar {
-  background: url("../img/flower.jpg") 100%;
-}
-
-.bar-header{
-  height: 33% !important;
-}
-
-.linhaTab {
-  margin-top: 33%;
-}
-
-.linhaTabSearch{
-  margin-top:1%;
-}
-
 .col{
   display: flex;
   background-color: #ED5565;
-  border: 1px solid #DA4453;
+  border: 5px solid #DA4453;
   margin: 1%;
 }
 
 .square {
   position: relative;
   width: 100%;
-  border: 1px solid #DA4453;
+  border: 5px solid #DA4453;
   background-color: #ED5565;
   margin: 5%;
-  /*background: url("../img/flower.jpg");/*/
 }
 
 .square:after {
@@ -57,3 +40,25 @@ a.tab-item{
 .tab-item-active .ion-ios-person{
   color: #5D9CEC !important;
 }
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.banner-container-home{
+  height: 33%;
+}
+
+.banner-container-search{
+  height: 33%;
+}
+
+.banner-container-profile{
+  height: 33%;
+}
+
+.item.item-input{
+}
+
+.linhaDescricao
