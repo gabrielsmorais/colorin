@@ -2,20 +2,17 @@ a.tab-item{
   border: 0 !important;
 }
 
-[nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar {
-  background: url("../img/flower.jpg") 100%;
-}
-
 .bar-header{
-  height: 33% !important;
-}
+  height: 80px;
+  background: url("../img/flower.jpg") 100%
+  }
 
 .linhaTab {
-  margin-top: 33%;
+  margin-top: 20%;
 }
 
 .linhaTabSearch{
-  margin-top:1%;
+  margin-top:10%;
 }
 
 .col{
@@ -31,7 +28,6 @@ a.tab-item{
   border: 1px solid #DA4453;
   background-color: #ED5565;
   margin: 5%;
-  /*background: url("../img/flower.jpg");/*/
 }
 
 .square:after {
@@ -56,4 +52,35 @@ a.tab-item{
 
 .tab-item-active .ion-ios-person{
   color: #5D9CEC !important;
+}
+
+
+/* Configurações - aba Login*/
+
+.perfil label{
+  margin: 10px;
+}
+
+.buttons{
+  display: flex;
+  flex: auto;
+}
+
+.perfil .user {
+  margin-top: 150px;
+}
+
+.perfil .btnsin {
+  margin: auto;
+  width: 50%;
+  display: block;
+  width: 150px;
+  margin-top: -15px;
+}
+
+.perfil .btnsup {
+  margin: auto;
+  display: block;
+  width: 150px;
+  margin-top: -15px;
 }
