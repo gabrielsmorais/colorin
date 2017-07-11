@@ -90,16 +90,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-.state('tab.register', {
-  url: '/register',
+.state('tab.registerp1', {
+  url: '/registerp1',
   views: {
     'tab-login': {
-      templateUrl: 'templates/tab-register.html',
-      controller: 'RegisterCtrl'
+      templateUrl: 'templates/tab-registerp1.html',
+      controller: 'Registerp1Ctrl'
     }
   }
   })
 
+  .state('tab.registerp2', {
+    url: '/registerp2',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/tab-registerp2.html',
+        controller: 'Registerp2Ctrl'
+      }
+    }
+    })
   // .state('tab.profile.item', {
   //   url: '/item',
   //   views: {

@@ -14,13 +14,20 @@ angular.module('starter.controllers', [])
   };
 
   $scope.registrar = function() {
-    $state.go("tab.register");
+    $state.go("tab.registerp1");
   }
-  }
-)
+})
 
-.controller('RegisterCtrl', function($scope, $state) {
+.controller('Registerp1Ctrl', function($scope, $state) {
+  $scope.registrarp1 = function() {
+    $state.go("tab.registerp2");
+}
+})
 
+.controller('Registerp2Ctrl', function($scope, $state) {
+  $scope.registrarp2 = function() {
+    $state.go("tab.profile");
+}
 })
 
 .controller('ProfileCtrl', function($scope, $state) {
