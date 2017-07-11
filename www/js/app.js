@@ -60,35 +60,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.login', {
+      url: '/login',
+      views: {
+        'tab-login': {
+          templateUrl: 'templates/tab-login.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
+
     .state('tab.profile', {
       url: '/profile',
       views: {
-        'tab-profile': {
+        'tab-login': {
           templateUrl: 'templates/tab-profile.html',
           controller: 'ProfileCtrl'
         }
       }
     })
 
-  .state('tab.login', {
-    url: '/login',
+  .state('tab.item', {
+    url: '/item',
     views: {
       'tab-login': {
-        templateUrl: 'templates/tab-login.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'templates/tab-item.html',
+        controller: 'ItemCtrl'
       }
     }
   })
 
-  .state('tab.item', {
-  url: '/item',
+.state('tab.register', {
+  url: '/register',
   views: {
-  'tab-profile': {
-  templateUrl: 'templates/tab-item.html',
-  controller: 'ItemCtrl'
+    'tab-login': {
+      templateUrl: 'templates/tab-register.html',
+      controller: 'RegisterCtrl'
     }
   }
-})
+  })
 
   // .state('tab.profile.item', {
   //   url: '/item',

@@ -1,24 +1,27 @@
-<ion-view>
+<ion-view name="tab-item" view-title="Color.in">
   <ion-content class="perfil">
-    <section>
+    <section class="Register_name">
       <div class="list list-inset entrada">
         <label class="item item-input user">
-          <input type="text" placeholder="User">
+          <input type="text" placeholder="Username" ngmodel="username">
         </label>
         <label class="item item-input password">
-          <input type="text" placeholder="Password">
+          <input type="text" placeholder="Password" ngmodel="password">
         </label>
       </div>
+    </section>
+    <section>
       <br>
       <div class="buttons">
-        <button class="button button-assertive btnsin" ng-click="clicar()">
+        <button class="button button-assertive btnsin" ng-click="logar()">
           Sign In
         </button>
         <br>
-        <button class="button button-positive btnsup">
+        <button class="button button-positive btnsup" ng-click="registrar()">
           Sign Up
         </button>
       </div>
     </section>
+
   </ion-content>
 </ion-view>

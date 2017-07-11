@@ -109,3 +109,14 @@ img {
 .bar .title.title-left {
     padding-left: 38%
 }
+
+/* Comandos aba Register */
+.Register_h1 {
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.Register_name{
+  display: flex;
+  flex: auto;
+}
