@@ -80,25 +80,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  // .state('tab.item', {
-  //   url: '/item',
-  //   views: {
-  //     'tab-login': {
-  //       templateUrl: 'templates/tab-item.html',
-  //       controller: 'ItemCtrl'
-  //     }
-  //   }
-  // })
-
   .state('tab.item', {
-  url: '/item',
-  views: {
-  'tab-profile': {
-  templateUrl: 'templates/tab-item.html',
-  controller: 'ItemCtrl'
+    url: '/item',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/tab-item.html',
+        controller: 'ItemCtrl'
+      }
     }
-  }
-})
+  })
+
+//   .state('tab.item', {
+//   url: '/item',
+//   views: {
+//   'tab-profile': {
+//   templateUrl: 'templates/tab-item.html',
+//   controller: 'ItemCtrl'
+//     }
+//   }
+// })
 
 .state('tab.registerp1', {
   url: '/registerp1',
@@ -109,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   }
   })
-  
+
   .state('tab.registerp2', {
     url: '/registerp2',
     views: {
