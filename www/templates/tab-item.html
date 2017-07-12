@@ -1,30 +1,27 @@
 <ion-view name="tab-item" view-title="Color.in">
   <ion-nav-bar>
     <ion-nav-buttons side="left">
-        <button class="button button-assertive  ion-chevron-left" ng-click="backButton()"></button>
-    </ion-nav-buttons>
-    <ion-nav-buttons side="right">
-        <button class="button button-assertive btn-white ion-navicon-round header-icon-size " ng-click="openDrawer()"></button>
+        <button class="button button-assertive btn-white  ion-chevron-left header-icon-size" ng-click="backButton()"></button>
     </ion-nav-buttons>
 </ion-nav-bar>
-  <ion-content>
-    <div class="banner-container-home">
-      <img class="banner-home" src="../img/flower.jpg">
-    </div>
-    <div class="row linhaTab">
-      <div id="colunaEsquerda1" class="col">
-         <div class="square">
-          <div class="content">
-            <img src="../img/art1.jpeg">
-          </div>
-        </div>
-    </div>
+<ion-content>
+  <div class="banner-container-home">
+    <img class="banner-home" src="../img/flower.jpg">
   </div>
-      <div id="colunaDireita1"class="col">
-          INFORMAÇÕES
+  <div class="list card">
+    <div class="item item-avatar itemItemInfo">
+      <img src="../img/adam.jpg">
+      <h2>ART NAME</h2>
+      <p>by Artist</p>
     </div>
-    <div id="colunaDireita1"class="col">
-          COMENTARIOS
+  <div class="item item-body itemItem">
+    <img class="full-image" src="../img/adam.jpg">
+      <div class="row">
+        <div class="col col-50"><i class="ion-ios-heart"></i> SENSE</div>
+        <div class="col col-50"><i class="ion-ios-eye"></i> VIEWS</div>
+      </div>
+      <div class="col itemColabs"><strong>COLABS:</strong>nice</div>
   </div>
-  </ion-content>
+  </div>
+</ion-content>
 </ion-view>

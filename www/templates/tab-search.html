@@ -1,26 +1,14 @@
 <ion-view view-title="Color.in">
   <ion-content>
-    <div class="banner-container-search">
-      <img src="../img/flower.jpg">
-      <div class="list list-inset col-12">
-        <label class="item item-input col-12">
-          <i class="icon ion-search placeholder-icon" ></i>
-        <input type="text" class="col-12" placeholder="Search">
-      </label>
-    </div>
-  </div>
-  <div class="row linhaTab">
-    <div id="colunaEsquerda1" class="col">
+    <label class="item item-input col-12">
+      <i class="icon ion-search placeholder-icon" ></i>
+    <input type="text" class="col-12" placeholder="Search">
+  </label>
+  <div class="row rowSearch">
+    <div ng-repeat="item in items" class="col col-50 itemSearch">
        <div class="square">
         <div class="content">
-          <img src="../img/art1.jpeg">
-        </div>
-      </div>
-    </div>
-      <div id="colunaDireita1"class="col">
-       <div class="square">
-        <div class="content">
-          <img src="../img/art2.jpg">
+          <img class="imgSearch" ng-src="{{item}}" ng-click="item()">
         </div>
       </div>
     </div>
