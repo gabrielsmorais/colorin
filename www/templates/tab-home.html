@@ -1,4 +1,7 @@
 <ion-view view-title="Color.in">
+  <ion-nav-buttons side="right">
+      <button class="button button-assertive btn-white ion-navicon-round header-icon-size " ng-click="openDrawer()"></button>
+  </ion-nav-buttons>
   <ion-content>
     <ion-refresher
     pulling-text="Pull To Refresh"
@@ -15,7 +18,6 @@
         <img ng-src="{{item}}">
         <h2>ART NAME</h2>
         <p>by Artist</p>
-      </div>
     <div class="item item-body itemHome">
       <img class="full-image" ng-src="{{item}}">
         <div class="row">
@@ -25,5 +27,6 @@
         </div>
     </div>
     </div>
+        </div>
   </ion-content>
 </ion-view>
