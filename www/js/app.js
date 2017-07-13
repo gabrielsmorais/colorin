@@ -111,7 +111,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.registerp2', {
-    url: '/registerp2',
+    url: '/registerp2/:artname',
     views: {
       'tab-login': {
         templateUrl: 'templates/tab-registerp2.html',

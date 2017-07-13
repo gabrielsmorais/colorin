@@ -62,10 +62,25 @@ angular.module('starter.controllers', [])
       }
 })
 
+.controller('Registerp2Ctrl', function($scope, $state, $http, Sessao) {
+   $scope.data = {};
+   var usuario = Sessao.obter();
+
+   $scope.registerart = function(){
+       $http.post('http://104.131.166.166:3000/'+usuario.username+'/registerp2', $scope.data).then(function(resposta){
+         $state.go('tab.item', {artname: $scope.data.artName});
+       })
+     }
+})
+
 .controller('ProfileCtrl', function($scope, $state, $stateParams, $http) {
   $scope.item = function(){
     $state.go("tab.item");
   }
+
+  $scope.newpost = function(){
+   $state.go('tab.registerp2',{username: resposta.data.username});
+ }
 
   $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
     $scope.data = resposta.data[0];
