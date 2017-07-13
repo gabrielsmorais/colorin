@@ -51,20 +51,26 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('Registerp1Ctrl', function($scope, $state, $http) {
+.controller('Registerp1Ctrl', function($scope, $state, $http, Sessao) {
     $scope.data = {};
 
     $scope.register = function(){
         $http.post('http://104.131.166.166:3000/registerp1', $scope.data).then(function(resposta){
+          Sessao.inicializar(resposta.data);
           $state.go('tab.profile', {username: resposta.data.username});
         })
       }
 })
 
-.controller('ProfileCtrl', function($scope, $state, $stateParams) {
+.controller('ProfileCtrl', function($scope, $state, $stateParams, $http) {
   $scope.item = function(){
     $state.go("tab.item");
   }
+
+  $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
+    $scope.data = resposta.data[0];
+  });
+
   $scope.items = [
     '../img/art1.jpeg',
     '../img/art2.jpg',
@@ -79,7 +85,9 @@ angular.module('starter.controllers', [])
   ]
 })
 
-.controller('ItemCtrl', function($scope, $state) {
+.controller('ItemCtrl', function($scope, $state, Sessao) {
+  $scope.usuario = Sessao.obter();
+
   $scope.backButton = function(){
     $state.go("tab.profile");
   }
