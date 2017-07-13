@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('Registerp1Ctrl', function($scope, $state) {
-  $scope.registrarp1 = function() {
+    $scope.registrarp1 = function() {
     $state.go("tab.registerp2");
 }
 })
