@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 
     .state('tab.profile', {
-      url: '/profile',
+      url: '/profile/:username',
       views: {
         'tab-login': {
           templateUrl: 'templates/tab-profile.html',
