@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $state) {
   $scope.logar = function() {
-    $state.go("tab.profile/:id");
+    $state.go("tab.profile/");
   };
 
   $scope.registrar = function() {
@@ -56,6 +56,16 @@ angular.module('starter.controllers', [])
 
     $scope.register = function(){
         $http.post('http://104.131.166.166:3000/registerp1', $scope.data).then(function(resposta){
+          $state.go('tab.profile', {username: resposta.data.username});
+        })
+      }
+})
+
+.controller('Registerp2Ctrl', function($scope, $state, $http) {
+    $scope.data = {};
+
+    $scope.registerart = function(){
+        $http.post('http://104.131.166.166:3000/registerp2', $scope.data).then(function(resposta){
           $state.go('tab.profile', {username: resposta.data.username});
         })
       }
@@ -78,6 +88,9 @@ angular.module('starter.controllers', [])
     '../img/perry.png'
   ]
 })
+  $scope.newpost = function(){
+    $state.go("tab.registerp2");
+  }
 
 .controller('ItemCtrl', function($scope, $state) {
   $scope.backButton = function(){
