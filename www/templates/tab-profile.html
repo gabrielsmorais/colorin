@@ -6,18 +6,19 @@
     <div class="banner-container-profile">
       <img class="banner-home" src="../img/banner1.jpeg">
     </div>
-    <button class="button button-block button-light" ng-click="newpost()">
-         New Post
-     </button>
-    <div class="row">
-      <div class="col col-50 itemProfile">
+    <div class="userInfo">
+     <div class="row profile">
+       <div class="col"></div>
+       <div class="col col-40 itemProfile">
          <div class="square">
           <div class="content">
-            <img class="imgProfile" src="../img/perry.png">
+            <img class="imgProfilePhoto" src="../img/perry.png">
           </div>
-          </div>
+        </div>
       </div>
-        <div class="col col-50 itemProfile">
+      <div class="col"></div>
+    </div>
+      <div class="col itemProfile">
           {{data.firstName}}
           {{data.lastName}}
           {{data.email}}
@@ -26,8 +27,11 @@
           {{data.username}}
           {{data.password}}
           {{data.description}}
-        </div>
+      </div>
     </div>
+      <button class="button button-block button-assertive" ng-click="newpost()">
+           New Post
+       </button>
     <div class="row rowProfile">
       <div ng-repeat="item in items" class="col col-50 itemProfile">
          <div class="square">
