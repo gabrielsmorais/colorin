@@ -42,8 +42,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $state) {
+
+
   $scope.logar = function() {
-    $state.go("tab.profile/");
+    $state.go('tab.profile', {username: resposta.data.username});
   };
 
   $scope.registrar = function() {
@@ -79,7 +81,7 @@ angular.module('starter.controllers', [])
   }
 
    $state.go('tab.registerp2',{username: resposta.data.username});
- }
+
 
   $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
     $scope.data = resposta.data[0];
@@ -97,10 +99,11 @@ angular.module('starter.controllers', [])
     '../img/flower.jpg',
     '../img/perry.png'
   ]
-})
+
   $scope.newpost = function(){
     $state.go("tab.registerp2");
   }
+})
 
 .controller('ItemCtrl', function($scope, $state, Sessao) {
   $scope.usuario = Sessao.obter();
