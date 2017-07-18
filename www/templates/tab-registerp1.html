@@ -1,74 +1,56 @@
 <ion-view name="tab-item" view-title="Color.in">
   <ion-content class="perfil">
-    <section>
-      <div class="Register_h1">
-        <p>Personal Information</p>
-      </div>
-      <div class="list">
-        <label class="item item-input item-floating-label">
-          <span class="input-label">First Name</span>
-          <input type="text" placeholder="First Name" ng-model="data.firstName">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Last Name</span>
-          <input type="text" placeholder="Last Name" ng-model="data.lastName">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Email</span>
-          <input type="text" placeholder="Email" ng-model="data.email">
-        </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Date of Birth</span>
-          <input type="date" placeholder="Date of Birth" ng-model="data.birth">
-        </label>
+      <div class="personalInfo">
+        Personal Information
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="First Name" ng-model="data.firstName">
+          </label>
+          <label class="item item-input item-floating-label">
+            <input type="text" placeholder="Last Name" ng-model="data.lastName">
+          </label>
+          <label class="item item-input item-floating-label">
+            <input type="text" placeholder="Email" ng-model="data.email">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <input type="date" placeholder="Date of Birth" ng-model="data.birth">
+          </label>
+        </div>
       </div>
 <!-- Seção de dados de registro e entrada no sistema -->
-        <div class="Register_h1">
-          <p>Access Settings</p>
+        <div class="userSettings">
+          User Settings
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Password" ng-model="data.password">
+            </label>
+                <!-- <label class="item item-input item-floating-label">
+                <span class="input-label">Confirm Password</span>
+                <input type="text" placeholder="Confirm Password" ng-model="dados.nome">
+                </label> -->
+          </div>
         </div>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Profile URL</span>
-          <input type="text" placeholder="Profile URL" ng-model="data.url">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Username</span>
-          <input type="text" placeholder="Username" ng-model="data.username">
-        </label>
-        <label class="item item-input item-floating-label">
-          <span class="input-label">Password</span>
-          <input type="text" placeholder="Password" ng-model="data.password">
-          <input type="text" placeholder="Profile Photo" ng-model="data.profilePhoto">
-        </label>
-        <!-- <label class="item item-input item-floating-label">
-          <span class="input-label">Confirm Password</span>
-          <input type="text" placeholder="Confirm Password" ng-model="dados.nome">
-        </label> -->
-    </section>
-    <section>
-        <!-- <div class="Register_h1">
-          <p>Color.in interaction</p>
+        <div class="profileSetting">
+          Profile Settings
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="Profile URL" ng-model="data.url">
+          </label>
+          <label class="item item-input">
+                <!-- <input type="text" placeholder="Profile Photo" ng-model="data.url"> EDITAR PARA PEGAR URL, NAO SEI O NOME NA API-->
+            <input type="text" placeholder="Profile Photo">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Banner">
+            <!-- <input type="text" placeholder="Profile Photo" ng-model="data.url"> EDITAR PARA PEGAR URL, NAO SEI O NOME NA API-->
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Description" ng-model="data.description">
+          </label>
         </div>
-        <ul class="list">
-          <li class="item item-toggle">
-             <p> Transparent: only appreciate Color.in </p>
-             <label class="toggle toggle-assertive">
-               <input type="checkbox">
-               <div class="track">
-                 <div class="handle"></div>
-               </div>
-             </label>
-          </li>
-        </ul> -->
-        <div class="Register_h1">
-          <p>Producer Settings</p>
-        </div>
-        <label class="item item-input">
-          <input type="text" placeholder="Description" ng-model="data.description">
-        </label>
-        </div>
-        <button ng-click="register()">
-          Finish
-        </button>
-    </section>
+        <button class="button button-block button-calm buttonFinish" ng-click="register()">Done</button>
   </ion-content>
 </ion-view>

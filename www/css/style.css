@@ -1,3 +1,23 @@
+/*General*/
+
+.card{
+  border-radius: 10%;
+}
+
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child{
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.list.list-inset{
+    border-radius: 15px;
+}
+
 /*Header*/
 .bar .title.title-left {
     text-align: center;
@@ -6,10 +26,6 @@
  /*Banner*/
 
 .banner-container-home{
-  height: 33%;
-}
-
-.banner-container-profile{
   height: 33%;
 }
 
@@ -32,16 +48,28 @@ a.tab-item{
 
 /*Home*/
 .itemHome{
-    background-color: #FFBCBA;
-    border: 3px solid #FF8282;
+    background-color: #ED5565;
+    border: 3px solid #ED5565;
+    color: white;
 }
 
 .itemHomeInfo{
-    background-color: #FFBCBA;
+    background-color: #ED5565;
+    color: white;
 }
+
+.itemHomeInfo h2{
+    color: white;
+    font-weight: bold;
+}
+
+.itemHomeInfo p{
+    color: white;
+    font-style: italic;
+}
+
 /*Search*/
 .itemSearch{
-  background-color: #FFBCBA;
 }
 
 .rowSearch{
@@ -49,12 +77,12 @@ a.tab-item{
 }
 
 .imgSearch{
-  border: 5px solid #FF8282;
+  border: 5px solid #ED5565;
+  border-radius: 15px;
 }
 
 /*Profile*/
 .itemProfile{
-  background-color: #FFBCBA;
 }
 
 .rowProfile{
@@ -62,21 +90,41 @@ a.tab-item{
 }
 
 .imgProfile{
-  border: 5px solid #FF8282;
+  border: 5px solid #ED5565;
+  border-radius: 15px;
+}
+
+.imgProfilePhoto{
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.userInfo{
+  position: relative;
+  padding-top: 9%;
+}
+
+.profileInfo{
+  text-align: center;
+}
+
+.banner-container-profile{
+  height: 20%;
+  position: absolute;
 }
 
 /*Item*/
 .itemItem{
-    background-color: #FFBCBA;
-    border: 3px solid #FF8282;
+    background-color: #ED5565;
+    border: 3px solid #ED5565;
 }
 
 .itemItemInfo{
-    background-color: #FFBCBA;
+    background-color: #ED5565;
 }
 
 .itemColabs{
-  border: 3px solid #FF8282;
+  border: 3px solid #ED5565;
 }
 
 
@@ -105,41 +153,63 @@ img {
 
 /* Configurações - aba Login*/
 
-.perfil label{
-  margin: 10px;
+.button.button-assertive {
+    border-color: transparent;
+    background-color: #ED5565;
+    color: #FFCE54;
+    width: 100%;
+  }
+
+.button.button-positive{
+  border-color: transparent;
+  background-color: #5D9CEC;
+  color: #FFCE54;
+  width: 100%;
 }
 
-.buttons{
-  display: flex;
-  flex: auto;
+.loginForm{
+  padding-top: 5%;
 }
 
-.perfil .user {
-  margin-top: 150px;
+/*Register Tabs */
+
+.personalInfo{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
 }
 
-.perfil .btnsin {
-  margin: auto;
-  width: 50%;
-  display: block;
-  width: 150px;
-  margin-top: -15px;
+.userSettings{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
 }
 
-.perfil .btnsup {
-  margin: auto;
-  display: block;
-  width: 150px;
-  margin-top: -15px;
+.profileSetting{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
 }
 
-/* Comandos aba Register */
-.Register_h1 {
-  font-size: 24px;
-  margin-top: 24px;
+.buttonFinish{
+  background-color: #FFCE54 !important;
+  color: black;
 }
 
-/*.Register_name{
-  display: flex;
-  flex: auto;
-}*/
+.button.button-calm{
+  color: #ED5565;
+}
+
+.itemRegistration{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
+}

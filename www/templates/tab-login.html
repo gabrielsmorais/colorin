@@ -1,27 +1,31 @@
 <ion-view name="tab-item" view-title="Color.in">
   <ion-content class="perfil">
-    <section class="Register_name">
+    <div class="banner-container-home">
+      <img class="banner-home" src="../img/bannercolorin.jpg">
+    </div>
+    <div class="loginForm">
       <div class="list list-inset entrada">
         <label class="item item-input user">
-          <input type="text" placeholder="Username" ngmodel="username">
+          <input type="text" placeholder="Username" ng-model="data.username">
         </label>
         <label class="item item-input password">
-          <input type="text" placeholder="Password" ngmodel="password">
+          <input type="text" placeholder="Password" ng-model="data.password">
         </label>
       </div>
-    </section>
-    <section>
-      <br>
-      <div class="buttons">
-        <button class="button button-assertive btnsin" ng-click="logar()">
+    <div>
+      <div class="row">
+        <div class="col">
+        <button class="button button-assertive buttonSign" ng-click="logar()">
           Sign In
         </button>
-        <br>
-        <button class="button button-positive btnsup" ng-click="registrar()">
+        </div>
+        <div class="col">
+        <button class="button button-positive buttonSup" ng-click="registrar()">
           Sign Up
         </button>
       </div>
-    </section>
-
+    </div>
+  </div>
+  </div>
   </ion-content>
 </ion-view>

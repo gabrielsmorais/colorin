@@ -41,11 +41,21 @@ angular.module('starter.controllers', [])
   ]
 })
 
-.controller('LoginCtrl', function($scope, $state) {
-
+.controller('LoginCtrl', function($scope, $state, $http, Sessao) {
+  $scope.data = {};
 
   $scope.logar = function() {
-    $state.go('tab.profile', {username: resposta.data.username});
+
+    $http.post('http://104.131.166.166:3000/login', $scope.data).then(function(resposta){
+      if(!resposta.data){
+        alert('Login invalido' );
+        return;
+      }
+      Sessao.inicializar(resposta.data);
+
+      $state.go("tab.profile", {username: resposta.data.username});
+    })
+
   };
 
   $scope.registrar = function() {
@@ -70,18 +80,25 @@ angular.module('starter.controllers', [])
 
    $scope.registerart = function(){
        $http.post('http://104.131.166.166:3000/'+usuario.username+'/registerp2', $scope.data).then(function(resposta){
-         $state.go('tab.item', {artname: $scope.data.artName});
+         $state.go('tab.item', {artName: resposta.data.artName});
        })
      }
 })
 
-.controller('ProfileCtrl', function($scope, $state, $stateParams, $http) {
+.controller('ProfileCtrl', function($scope, $state, $stateParams, $http, Sessao) {
+  var usuario = Sessao.obter();
   $scope.item = function(){
     $state.go("tab.item");
   }
 
+<<<<<<< HEAD
    $state.go('tab.registerp2',{username: resposta.data.username});
 
+=======
+  $scope.newpost = function(){
+   $state.go('tab.registerp2');
+ }
+>>>>>>> 1f7f37727921ee670dde59cd95ad606b37757bb1
 
   $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
     $scope.data = resposta.data[0];
@@ -105,8 +122,12 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ItemCtrl', function($scope, $state, Sessao) {
+.controller('ItemCtrl', function($scope, $state, $stateParams, $http, Sessao) {
   $scope.usuario = Sessao.obter();
+
+  $http.get('http://104.131.166.166:3000/profile/'+ $scope.usuario.username).then(function(resposta){
+    $scope.data = resposta.data[0];
+  });
 
   $scope.backButton = function(){
     $state.go("tab.profile");
