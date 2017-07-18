@@ -1,3 +1,23 @@
+/*General*/
+
+.card{
+  border-radius: 10%;
+}
+
+.card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.list.list-inset{
+    border-radius: 15px;
+}
+
 /*Header*/
 .bar .title.title-left {
     text-align: center;
@@ -28,13 +48,13 @@ a.tab-item{
 
 /*Home*/
 .itemHome{
-    background-color: #FF3F3F;
-    border: 3px solid #FF3F3F;
+    background-color: #ED5565;
+    border: 3px solid #ED5565;
     color: white;
 }
 
 .itemHomeInfo{
-    background-color: #FF3F3F;
+    background-color: #ED5565;
     color: white;
 }
 
@@ -57,7 +77,7 @@ a.tab-item{
 }
 
 .imgSearch{
-  border: 5px solid #FF3F3F;
+  border: 5px solid #ED5565;
 }
 
 /*Profile*/
@@ -80,6 +100,10 @@ a.tab-item{
 .userInfo{
   position: relative;
   padding-top: 9%;
+}
+
+.profileInfo{
+  text-align: center;
 }
 
 .banner-container-profile{
@@ -127,41 +151,58 @@ img {
 
 /* Configurações - aba Login*/
 
-.perfil label{
-  margin: 10px;
+.button.button-assertive {
+    border-color: transparent;
+    background-color: #ED5565;
+    color: #FFCE54;
+    width: 100%;
+  }
+
+.button.button-positive{
+  border-color: transparent;
+  background-color: #5D9CEC;
+  color: #FFCE54;
+  width: 100%;
 }
 
-.buttons{
-  display: flex;
-  flex: auto;
-}
-
-.perfil .user {
-  margin-top: 150px;
-}
-
-.perfil .btnsin {
-  margin: auto;
-  width: 50%;
-  display: block;
-  width: 150px;
-  margin-top: -15px;
-}
-
-.perfil .btnsup {
-  margin: auto;
-  display: block;
-  width: 150px;
-  margin-top: -15px;
+.loginForm{
+  padding-top: 40%;
 }
 
 /*Register Tabs */
-.Register_h1 {
-  font-size: 24px;
-  margin-top: 24px;
+
+.personalInfo{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
 }
 
+.userSettings{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
+}
 
+.profileSetting{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
+}
+
+.buttonFinish{
+  background-color: #FFCE54 !important;
+  color: black;
+}
+
+.button.button-calm{
+  color: #ED5565;
+}
 /*.Register_name{
   display: flex;
   flex: auto;

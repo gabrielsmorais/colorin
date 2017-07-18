@@ -1,7 +1,4 @@
 <ion-view view-title="Color.in" >
-  <ion-nav-buttons side="right">
-      <button class="button button-assertive btn-white ion-navicon-round header-icon-size " ng-click="openDrawer()"></button>
-  </ion-nav-buttons>
   <ion-content>
     <div class="banner-container-profile">
       <img class="banner-home" src="../img/banner1.jpeg">
@@ -18,15 +15,22 @@
       </div>
       <div class="col"></div>
     </div>
-      <div class="col itemProfile">
-          {{data.firstName}}
+      <div class="col profileInfo">
+        <h4>USERNAME</h4>
+        <p>Mateus Bentivegna é estudante de design gráfico pelo Centro Universitário Belas Artes de São Paulo.</p>
+          <!-- {{data.firstName}}
           {{data.lastName}}
           {{data.email}}
           {{data.birth}}
           {{data.url}}
           {{data.username}}
           {{data.password}}
-          {{data.description}}
+          {{data.description}} -->
+      </div>
+      <div class="row">
+        <div class="col col-33"><i class="ion-ios-heart"></i> SENSE</div>
+        <div class="col col-33"><i class="ion-ios-chatboxes"></i> COLABS</div>
+        <div class="col col-33"><i class="ion-ios-eye"></i> VIEWS</div>
       </div>
     </div>
       <button class="button button-block button-assertive" ng-click="newpost()">
