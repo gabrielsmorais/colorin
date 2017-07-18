@@ -1,21 +1,20 @@
 <ion-view name="tab-registerp2" view-title="Color.in">
  <ion-content class="perfil">
-   <div class="list">
-     <label class="item item-input item-floating-label">
-       <span class="input-label">Art Name</span>
-       <input type="text" placeholder="Art Name" ng-model="data.artName">
-     </label>
-     <label class="item item-input item-floating-label">
-       <span class="input-label">Art Description</span>
-       <input type="text" placeholder="Art Description" ng-model="data.artDescription">
-     </label>
-     <label class="item item-input item-floating-label">
-       <span class="input-label">img</span>
-       <input type="text" placeholder="Art Img" ng-model="data.artImg">
-     </label>
-     <button ng-click="registerart()">
-       Finish
-     </button>
+   <div class="itemRegistration">
+     Item Upload
+     <div class="list list-inset">
+       <label class="item item-input">
+         <input type="text" placeholder="Art Name" ng-model="data.artName">
+       </label>
+       <label class="item item-input">
+         <input type="text" placeholder="Art Description" ng-model="data.artDescription">
+       </label>
+       <label class="item item-input">
+         <input type="text" placeholder="Art Img" ng-model="data.artImg">
+       </label>
    </div>
+   <button class="button button-block button-calm buttonFinish" ng-click="registerart()">Done</button>
+
+  </div>
  </ion-content>
 </ion-view>

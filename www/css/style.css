@@ -5,13 +5,13 @@
 }
 
 .card .item:first-child, .list-inset .item:first-child, .padding > .list .item:first-child{
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
 }
 
 .card .item:last-child, .list-inset .item:last-child, .padding > .list .item:last-child {
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
 }
 
 .list.list-inset{
@@ -78,6 +78,7 @@ a.tab-item{
 
 .imgSearch{
   border: 5px solid #ED5565;
+  border-radius: 15px;
 }
 
 /*Profile*/
@@ -89,7 +90,8 @@ a.tab-item{
 }
 
 .imgProfile{
-  border: 5px solid #FF3F3F;
+  border: 5px solid #ED5565;
+  border-radius: 15px;
 }
 
 .imgProfilePhoto{
@@ -113,16 +115,16 @@ a.tab-item{
 
 /*Item*/
 .itemItem{
-    background-color: #FFBCBA;
-    border: 3px solid #FF8282;
+    background-color: #ED5565;
+    border: 3px solid #ED5565;
 }
 
 .itemItemInfo{
-    background-color: #FFBCBA;
+    background-color: #ED5565;
 }
 
 .itemColabs{
-  border: 3px solid #FF8282;
+  border: 3px solid #ED5565;
 }
 
 
@@ -166,7 +168,7 @@ img {
 }
 
 .loginForm{
-  padding-top: 40%;
+  padding-top: 5%;
 }
 
 /*Register Tabs */
@@ -203,7 +205,11 @@ img {
 .button.button-calm{
   color: #ED5565;
 }
-/*.Register_name{
-  display: flex;
-  flex: auto;
-}*/
+
+.itemRegistration{
+  font-size: large;
+  color: #FFCE54;
+  text-align: center;
+  background-color: #ED5565;
+  padding-top: 5%;
+}
