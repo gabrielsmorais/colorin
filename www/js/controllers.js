@@ -6,6 +6,18 @@ angular.module('starter.controllers', [])
     $state.go("tab.item");
   }
 
+  $scope.backButton = function(){
+    $state.go("tab.profile");
+  }
+
+
+  // var bgColorArray = ['#FF94A1','#FFF589','#BEC4F2'],
+  //   selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+  //
+  //   [].forEach.call(document.getElementsByTagName('itemHomeInfo'), function(el) {
+  //     el.style.backgroundColor = selectBG;
+  // });
+
   $scope.items = [
     '../img/art1.jpeg',
     '../img/art2.jpg',

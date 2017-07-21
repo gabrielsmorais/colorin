@@ -1,29 +1,31 @@
 <ion-view view-title="Color.in">
   <ion-content>
-    <ion-refresher
-    pulling-text="Pull To Refresh"
-    pulling-icon="ion-chevron-down"
-    spinner="ripple"
-    refreshing-text="Refreshing"
-    on-refresh="doRefresh()">
-  </ion-refresher>
+<link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">      <ion-refresher
+      pulling-text="Pull To Refresh"
+      pulling-icon="ion-chevron-down"
+      spinner="ripple"
+      refreshing-text="Refreshing"
+      on-refresh="doRefresh()">
+    </ion-refresher>
     <div class="banner-container-home">
       <img class="banner-home" src="../img/bannercolorin.jpg">
     </div>
     <div ng-repeat="item in items" class="list card">
       <div class="item item-avatar itemHomeInfo">
         <img ng-src="{{item}}">
-        <h2>ART NAME</h2>
-        <p>by Artist</p>
-      </div>
-    <div class="item item-body itemHome">
-      <img class="full-image" ng-src="{{item}}">
-        <div class="row">
-          <div class="col col-33"><i class="ion-ios-heart"></i> SENSE</div>
-          <div class="col col-33"><i class="ion-ios-chatboxes"></i> COLABS</div>
-          <div class="col col-33"><i class="ion-ios-eye"></i> VIEWS</div>
+        <div class="userInfoHome">
+          <h2 class="artName">ART NAME</h2>
+          <p class="artArtist">by Artist</p>
         </div>
-    </div>
+      </div>
+      <img class="full-image" ng-src="{{item}}">
+    <div class="item item-body itemHome">
+        <div class="row">
+          <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
+          <div class="col col-33 colColabHome"><i class="ion-ios-chatboxes"></i> 120</div>
+          <div class="col col-33 colViewHome"><i class="ion-ios-eye"></i> 109</div>
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

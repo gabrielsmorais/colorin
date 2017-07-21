@@ -1,4 +1,5 @@
 <ion-view view-title="Color.in">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
   <ion-content>
     <label class="item item-input col-12">
       <i class="icon ion-search placeholder-icon" ></i>
@@ -6,12 +7,28 @@
   </label>
   <div class="row rowSearch">
     <div ng-repeat="item in items" class="col col-50 itemSearch">
-       <div class="square">
-        <div class="content">
-          <img class="imgSearch" ng-src="{{item}}" ng-click="item()">
+    <div class="item item-body itemSearch">
+      <div class="square">
+       <div class="content">
+      <img class="full-image search" ng-src="{{item}}">
+      </div>
         </div>
+      </div>
+      <div class="row rowSearchItem">
+        <div class="col col-33 colSenseSearch"><i class="ion-ios-heart"></i> 100</div>
+        <div class="col col-33 colColabSearch"><i class="ion-ios-chatboxes"></i> 20</div>
+        <div class="col col-33 colViewSearch"><i class="ion-ios-eye"></i> 109</div>
       </div>
     </div>
   </div>
+    <!-- <div class="row rowSearch">
+      <div ng-repeat="item in items" class="col col-50 itemSearch">
+         <div class="square">
+          <div class="content">
+            <img class="imgSearch" ng-src="{{item}}" ng-click="item()">
+          </div>
+        </div>
+      </div>
+    </div> -->
   </ion-content>
 </ion-view>
