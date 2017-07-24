@@ -2,27 +2,19 @@
   <ion-content>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
     <div class="banner-container-profile">
-      <img class="banner-home" src="../img/banner1.jpeg">
+      <img class="banner-home" ng-src="{{data.banner}}">
     </div>
     <div class="userInfo">
      <div class="row profile">
        <div class="col"></div>
        <div class="col col-40 itemProfile">
-            <img class="imgProfilePhoto" src="../img/perry.png">
+            <img class="imgProfilePhoto" ng-src="{{data.profilephoto}}">
       </div>
       <div class="col"></div>
     </div>
       <div class="col profileInfo">
-        <h2 class="profileUsername">USERNAME</h2>
-        <p class="profileDescription">Mateus Bentivegna é estudante de design gráfico pelo Centro Universitário Belas Artes de São Paulo.</p>
-          <!-- {{data.firstName}}
-          {{data.lastName}}
-          {{data.email}}
-          {{data.birth}}
-          {{data.url}}
-          {{data.username}}
-          {{data.password}}
-          {{data.description}} -->
+        <h2 class="profileUsername">{{data.username}}</h2>
+        <p class="profileDescription">{{data.description}}.</p>
       </div>
       <div class="row profileStatus">
         <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>

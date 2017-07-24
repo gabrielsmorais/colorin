@@ -3,14 +3,14 @@
   <ion-content>
     <label class="item item-input col-12">
       <i class="icon ion-search placeholder-icon" ></i>
-    <input type="text" class="col-12" placeholder="Search">
+    <input type="text" class="col-12" placeholder="Search" ng-model="search.query" ng-enter="buscar()">
   </label>
   <div class="row rowSearch">
     <div ng-repeat="item in items" class="col col-50 itemSearch">
     <div class="item item-body itemSearch">
       <div class="square">
        <div class="content">
-      <img class="full-image search" ng-src="{{item}}">
+      <img class="full-image search" ng-src="{{item.artImg}}">
       </div>
         </div>
       </div>
@@ -21,14 +21,5 @@
       </div>
     </div>
   </div>
-    <!-- <div class="row rowSearch">
-      <div ng-repeat="item in items" class="col col-50 itemSearch">
-         <div class="square">
-          <div class="content">
-            <img class="imgSearch" ng-src="{{item}}" ng-click="item()">
-          </div>
-        </div>
-      </div>
-    </div> -->
   </ion-content>
 </ion-view>

@@ -1,10 +1,23 @@
 angular.module('starter.controllers', [])
 
+.directive('ngEnter', function() {
+       return function(scope, element, attrs) {
+           element.bind("keydown keypress", function(event) {
+               if(event.which === 13) {
+                       scope.$apply(function(){
+                               scope.$eval(attrs.ngEnter);
+                       });
 
-.controller('HomeCtrl', function($scope, $state, $timeout) {
-  $scope.goItem = function(){
-    $state.go("tab.item");
-  }
+                       event.preventDefault();
+               }
+           });
+       };
+})
+
+.controller('HomeCtrl', function($scope, $http, $state, $timeout) {
+    $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+    $scope.items = resposta.data;
+ })
 
   $scope.backButton = function(){
     $state.go("tab.profile");
@@ -18,19 +31,6 @@ angular.module('starter.controllers', [])
   //     el.style.backgroundColor = selectBG;
   // });
 
-  $scope.items = [
-    '../img/art1.jpeg',
-    '../img/art2.jpg',
-    '../img/art3.jpeg',
-    '../img/art4.jpg',
-    '../img/art5.jpg',
-    '../img/art6.jpg',
-    '../img/art7.jpg',
-    '../img/banner1.jpeg',
-    '../img/flower.jpg',
-    '../img/perry.png'
-  ]
-
   $scope.doRefresh = function() {
     $timeout( function() {
       $scope.$broadcast('scroll.refreshComplete');
@@ -38,19 +38,31 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('SearchCtrl', function($scope) {
-  $scope.items = [
-    '../img/art1.jpeg',
-    '../img/art2.jpg',
-    '../img/art3.jpeg',
-    '../img/art4.jpg',
-    '../img/art5.jpg',
-    '../img/art6.jpg',
-    '../img/art7.jpg',
-    '../img/banner1.jpeg',
-    '../img/flower.jpg',
-    '../img/perry.png'
-  ]
+.controller('SearchCtrl', function($scope, $http, $state, $timeout) {
+ $scope.search = {};
+
+ $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+   $scope.items = resposta.data;
+ });
+
+ $scope.buscar = function(){
+   if($scope.search.query != null){
+     $http.get('http://104.131.166.166:3000/search/'+$scope.search.query).then(function(resposta){
+     $scope.items = resposta.data;
+     });
+   }
+   else{
+     $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+       $scope.items = resposta.data;
+     });
+   }
+ };
+
+ $scope.doRefresh = function() {
+   $timeout( function() {
+     $scope.$broadcast('scroll.refreshComplete');
+   }, 3000);
+ }
 })
 
 .controller('LoginCtrl', function($scope, $state, $http, Sessao) {
@@ -98,31 +110,22 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileCtrl', function($scope, $state, $stateParams, $http, Sessao) {
-  var usuario = Sessao.obter();
-  $scope.item = function(){
-    $state.go("tab.item");
-  }
-
-  $scope.newpost = function(){
-   $state.go('tab.registerp2');
+ var usuario = Sessao.obter();
+ $scope.item = function(){
+   $state.go("tab.item");
  }
 
-  $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
-    $scope.data = resposta.data[0];
-  });
+ $scope.newpost = function(){
+  $state.go('tab.registerp2');
+}
 
-  $scope.items = [
-    '../img/art1.jpeg',
-    '../img/art2.jpg',
-    '../img/art3.jpeg',
-    '../img/art4.jpg',
-    '../img/art5.jpg',
-    '../img/art6.jpg',
-    '../img/art7.jpg',
-    '../img/banner1.jpeg',
-    '../img/flower.jpg',
-    '../img/perry.png'
-  ]
+ $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username +'/list').then(function(resposta){
+   $scope.data = resposta.data[0];
+ });
+
+ $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username).then(function(resposta2){
+   $scope.items = resposta2.data;
+ })
 })
 
 .controller('ItemCtrl', function($scope, $state, $stateParams, $http, Sessao) {

@@ -13,14 +13,14 @@
     </div>
     <div ng-repeat="item in items" class="list card">
       <div class="item item-avatar itemHomeInfo">
-        <img ng-src="{{item}}">
+        <img ng-src="{{item.profilephoto}}">
         <div class="userInfoHome">
-          <h2 class="artName">ART NAME</h2>
-          <p class="artArtist">by Artist</p>
+          <h2 class="artName">{{item.artName}}</h2>
+          <p class="artArtist">{{item.firstName}}</p>
         </div>
       </div>
       <!-- <img class="full-image" ng-src="{{item}}" ng-click="goItem()"> -->
-      <img class="full-image" ng-src="{{item}}">
+      <img class="full-image" ng-src="{{item.artImg}}">
     <div class="item item-body itemHome">
         <div class="row">
           <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
