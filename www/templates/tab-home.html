@@ -16,15 +16,44 @@
         <img ng-src="{{item.profilephoto}}">
         <div class="userInfoHome">
           <h2 class="artName">{{item.artName}}</h2>
-          <p class="artArtist">{{item.firstName}}</p>
+          <p class="artArtist">{{item.username}}</p>
         </div>
       </div>
       <!-- <img class="full-image" ng-src="{{item}}" ng-click="goItem()"> -->
       <img class="full-image" ng-src="{{item.artImg}}">
-    <div class="item item-body itemHome">
+    <div class="item item-body itemHome"></div>
+      <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
+        <div class="col colPurple">
+          <div class="square squarePurple"></div>
+        </div>
+        <div class="col colRed">
+          <div class="square squareRed"></div>
+        </div>
+        <div class="col colOrange">
+          <div class="square squareOrange"></div>
+        </div>
+        <div class="col colYellow">
+          <div class="square squareYellow"></div>
+        </div>
+        <div class="col colGreen">
+          <div class="square squareGreen"></div>
+        </div>
+        <div class="col colBlue">
+          <div class="square squareBlue"></div>
+        </div>
+        <div class="col colWhite">
+          <div class="square squareWhite"></div>
+        </div>
+      </div>
+        <!-- <div class="item item-input-inset colabBox" ng-class="{ 'hidden': ! showColabs }">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Colab" class="inputColab">
+          </label>
+          <button class="button button-small">Submit</button>
+        </div> -->
         <div class="row">
-          <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
-          <div class="col col-33 colColabHome"><i class="ion-ios-chatboxes"></i> 120</div>
+          <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i> 100</div>
+          <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i> 120</div>
           <div class="col col-33 colViewHome"><i class="ion-ios-eye"></i> 109</div>
         </div>
       </div>
