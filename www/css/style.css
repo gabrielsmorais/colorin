@@ -44,6 +44,20 @@ color: #F4DF00;
 color: #0941C1;
 */
 
+.colabBox{
+  /*background-color: black;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;*/
+  transition: 1s;
+  overflow: hidden;
+}
+
+.colabBox.hidden {
+    max-height: 0;
+}
+
 .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image{
   top: 6px;
   left: 6px;
@@ -158,14 +172,14 @@ color: #0941C1;
   border-bottom-right-radius: 50%;*/
   transition: 1s;
   overflow: hidden;
-  background-color: #FFB17E;
+  background-color: #F1F1F1;
 }
 
 .rowSenses.hidden {
     max-height: 0;
 }
 
-.colabBox{
+.userProfSettings{
   /*background-color: black;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
@@ -173,14 +187,30 @@ color: #0941C1;
   border-bottom-right-radius: 50%;*/
   transition: 1s;
   overflow: hidden;
-  background-color: #FFB17E;
-  background-color: #BEC4F2;
-  margin: -3%;
 }
 
-.colabBox.hidden {
+.userProfSettings.hidden {
     max-height: 0;
 }
+
+/*.item-input-wrapper ~ .button{
+  font-size: large;
+  color: #F4DF00;
+  background-color: #BEC4F2;
+  border: 1px solid #F4DF00;
+  font-weight: bold;
+}
+
+.item-input-wrapper{
+color: black;
+background-color: #BEC4F2;
+border: 1px solid #F4DF00;
+}
+
+.inputColab{
+  color: black !important;
+  font-weight: bold;
+}*/
 
 /*Search*/
 .itemSearch{
@@ -276,8 +306,8 @@ color: #0941C1;
 }
 
 .itemColabs{
-  border: 3px solid #BEC4F2;
-  background-color: #BEC4F2;
+  border: 3px solid white;
+  background-color: white;
   color: black;
 }
 
@@ -289,26 +319,6 @@ color: #0941C1;
 .itemItemInfo p{
     color: white;
     font-style: italic;
-}
-
-  .item-input-wrapper ~ .button{
-    font-size: large;
-    color: #F4DF00;
-    background-color: #BEC4F2;
-    border: 1px solid #F4DF00;
-    font-weight: bold;
-  }
-
-.item-input-wrapper{
-  color: black;
-  background-color: #BEC4F2;
-  border: 1px solid #F4DF00;
-}
-
-.inputColab{
-    color: black !important;
-    font-weight: bold;
-  }
 }
 
 /*Frames e Imagens*/
@@ -351,7 +361,7 @@ color: #0941C1;
 }
 
 .loginForm{
-  padding-top: 5%;
+  padding-top: 15%;
 }
 
 /*Register Tabs */
@@ -375,31 +385,27 @@ color: #0941C1;
 
 .personalInfo{
   font-size: large;
-  color: #FFCE54;
+  color: #FF7474;
   text-align: center;
-  background-color: #ED5565;
   padding-top: 5%;
 }
 
 .userSettings{
   font-size: large;
-  color: #FFCE54;
+  color: #FF7474;
   text-align: center;
-  background-color: #ED5565;
   padding-top: 5%;
 }
 
 .profileSetting{
   font-size: large;
-  color: #FFCE54;
+  color: #FF7474;
   text-align: center;
-  background-color: #ED5565;
   padding-top: 5%;
 }
 
 .buttonFinish{
-  background-color: #FFCE54 !important;
-  color: black;
+
 }
 
 .button.button-calm{
@@ -408,8 +414,46 @@ color: #0941C1;
 
 .itemRegistration{
   font-size: large;
-  color: #FFCE54;
+  color: #FF7474;
   text-align: center;
-  background-color: #ED5565;
+  background-color: white;
   padding-top: 5%;
+}
+
+/*Tab Settings*/
+.userInfoSettings{
+  position: relative;
+}
+
+.userProfSettings{
+  /*background-color: black;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;*/
+  transition: 1s;
+  overflow: hidden;
+}
+
+.userProfSettings.hidden {
+    max-height: 0;
+}
+
+.userAppSettings{
+  transition: 1s;
+  overflow: hidden;
+}
+
+.userAppSettings.hidden {
+  max-height: 0;
+}
+
+.button-energized{
+  width: 100%;
+}
+.button-balanced{
+  width: 100%;
+}
+.button-dark{
+  width: 100%;
 }

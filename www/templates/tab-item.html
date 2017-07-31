@@ -1,7 +1,7 @@
 <ion-view name="tab-item" view-title="Color.in">
   <ion-nav-bar>
     <ion-nav-buttons side="left">
-        <button class="button button-assertive btn-white  ion-chevron-left header-icon-size" ng-click="backButton()"></button>
+        <button class="btn-white  ion-chevron-left header-icon-size back" onClick="javascript:history.go(-1)"></button>
     </ion-nav-buttons>
 </ion-nav-bar>
 <ion-content>
@@ -12,25 +12,51 @@
   </div>
   <div class="list card">
     <div class="item item-avatar itemHomeInfo">
-      <img src="{{item.profilephoto}}">
+      <img src="../img/perry.png">
       <h2>{{item.artName}}</h2>
       <p>{{item.username}}</p>
     </div>
     <img class="full-image" src="{{item.artImg}}">
   <div class="item item-body itemHome">
-      <div class="row">
-        <div class="col col-50 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
-        <div class="col col-50 colViewHome"><i class="ion-ios-eye"></i> 130</div>
+    <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
+      <div class="col colPurple">
+        <div class="square squarePurple"></div>
       </div>
+      <div class="col colRed">
+        <div class="square squareRed"></div>
+      </div>
+      <div class="col colOrange">
+        <div class="square squareOrange"></div>
+      </div>
+      <div class="col colYellow">
+        <div class="square squareYellow"></div>
+      </div>
+      <div class="col colGreen">
+        <div class="square squareGreen"></div>
+      </div>
+      <div class="col colBlue">
+        <div class="square squareBlue"></div>
+      </div>
+      <div class="col colWhite">
+        <div class="square squareWhite"></div>
+      </div>
+    </div>
+    <div class="list colabBox" ng-class="{ 'hidden': ! showColabs }">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Colab">
+      </label>
+      <button class="button button-small" ng-click="showColabs = ! showColabs">
+        Submit
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i> 100</div>
+    <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i> 120</div>
+    <div class="col col-33 colViewHome"><i class="ion-ios-eye" ng-click="view\Item()"></i> 109</div>
+  </div>
       <div class="col itemColabs"><strong>User: </strong> nice</div>
-      <div class="list">
-        <div class="item item-input-inset colabBox">
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="Colab" class="inputColab">
-          </label>
-          <button class="button button-small">Submit</button>
-        </div>
-      </div>
   </div>
   </div>
 </ion-content>

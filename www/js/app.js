@@ -83,7 +83,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.item', {
     url: '/item/:artName',
     views: {
-      'tab-login': {
+      'tab-home': {
         templateUrl: 'templates/tab-item.html',
         controller: 'ItemCtrl'
       }
@@ -106,6 +106,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     'tab-login': {
       templateUrl: 'templates/tab-registerp1.html',
       controller: 'Registerp1Ctrl'
+    }
+  }
+  })
+
+.state('tab.settings', {
+  url: '/settings',
+  views: {
+    'tab-settings': {
+      templateUrl: 'templates/tab-settings.html',
+      controller: 'SettingsCtrl'
     }
   }
   })
