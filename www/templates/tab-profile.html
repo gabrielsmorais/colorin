@@ -1,36 +1,25 @@
 <ion-view view-title="Color.in" >
   <ion-content>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
     <div class="banner-container-profile">
-      <img class="banner-home" src="../img/banner1.jpeg">
+      <img class="banner-home" ng-src="{{data.banner}}">
     </div>
     <div class="userInfo">
      <div class="row profile">
        <div class="col"></div>
        <div class="col col-40 itemProfile">
-         <div class="square">
-          <div class="content">
-            <img class="imgProfilePhoto" src="../img/perry.png">
-          </div>
-        </div>
+            <img class="imgProfilePhoto" ng-src="{{data.profilephoto}}">
       </div>
       <div class="col"></div>
     </div>
       <div class="col profileInfo">
-        <h4>USERNAME</h4>
-        <p>Mateus Bentivegna é estudante de design gráfico pelo Centro Universitário Belas Artes de São Paulo.</p>
-          <!-- {{data.firstName}}
-          {{data.lastName}}
-          {{data.email}}
-          {{data.birth}}
-          {{data.url}}
-          {{data.username}}
-          {{data.password}}
-          {{data.description}} -->
+        <h2 class="profileUsername">{{data.username}}</h2>
+        <p class="profileDescription">{{data.description}}.</p>
       </div>
-      <div class="row">
-        <div class="col col-33"><i class="ion-ios-heart"></i> SENSE</div>
-        <div class="col col-33"><i class="ion-ios-chatboxes"></i> COLABS</div>
-        <div class="col col-33"><i class="ion-ios-eye"></i> VIEWS</div>
+      <div class="row profileStatus">
+        <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
+        <div class="col col-33 colColabHome"><i class="ion-ios-chatboxes"></i> 120</div>
+        <div class="col col-33 colViewHome"><i class="ion-ios-eye"></i> 109</div>
       </div>
     </div>
       <button class="button button-block button-assertive" ng-click="newpost()">
@@ -48,16 +37,17 @@
     <div ng-repeat="item in items" class="list card">
       <div class="item item-avatar itemHomeInfo">
         <img ng-src="{{item}}">
-        <h2>ART NAME</h2>
-        <p>by Artist</p>
+        <h2>{{item.artName}}</h2>
+        <p>{{item.username}}</p>
       </div>
     <div class="item item-body itemHome">
-      <img class="full-image" ng-src="{{item}}">
-        <div class="row">
-          <div class="col col-33"><i class="ion-ios-heart"></i> SENSE</div>
-          <div class="col col-33"><i class="ion-ios-chatboxes"></i> COLABS</div>
-          <div class="col col-33"><i class="ion-ios-eye"></i> VIEWS</div>
-        </div>
+      <img class="full-image" ng-src="{{item.profilephoto}}">
+      <div class="row">
+        <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i> 100</div>
+        <div class="col col-33 colColabHome"><i class="ion-ios-chatboxes"></i> 120</div>
+        <div class="col col-33 colViewHome"><i class="ion-ios-eye"></i> 109</div>
+      </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>

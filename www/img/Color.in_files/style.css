@@ -61,11 +61,11 @@ color: #0941C1;
 
 .item-body.itemHome{
   padding: 0px !important;
-  border-bottom: 15px solid #FFB17E !important;
+  border-bottom: 15px solid #BEC4F2 !important;
 }
 
 .itemHomeInfo{
-    background-color: #FFB17E;
+    background-color: #BEC4F2;
     color: white;
     border-bottom: 10px solid white;
 }
@@ -86,100 +86,18 @@ color: #0941C1;
   text-align: left;
   color: #DC0000;
   font-size: 23px;
-  font-family: 'Dosis', serif;
 }
 
 .colColabHome{
   text-align: center;
   color: #F4DF00;
   font-size: 23px;
-  font-family: 'Dosis', serif;
 }
 
 .colViewHome{
   text-align: right;
   color: #0941C1;
   font-size: 23px;
-  font-family: 'Dosis', serif;
-}
-
-.squareYellow{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #FFF589 ;
-}
-
-.squareGreen{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #8DCF8A;
-}
-
-.squareBlue{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #BEC4F2;
-}
-
-.squareViolet{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: violet;
-}
-
-.squareRed{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #FF7474;
-}
-
-.squareOrange{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #FFB17E;
-}
-
-.squareWhite{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #F1F1F1;
-}
-
-.squarePurple{
-  border-radius: 50%;
-  border: 1px solid grey;
-  background-color: #ED95C7;
-}
-.rowSenses{
-  /*background-color: black;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;*/
-  transition: 1s;
-  overflow: hidden;
-  background-color: #FFB17E;
-}
-
-.rowSenses.hidden {
-    max-height: 0;
-}
-
-.colabBox{
-  /*background-color: black;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;*/
-  transition: 1s;
-  overflow: hidden;
-  background-color: #FFB17E;
-  background-color: #BEC4F2;
-  margin: -3%;
-}
-
-.colabBox.hidden {
-    max-height: 0;
 }
 
 /*Search*/
@@ -215,19 +133,19 @@ color: #0941C1;
   .colSenseSearch{
     text-align: left;
     color: #DC0000;
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .colColabSearch{
     text-align: center;
     color: #F4DF00;
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .colViewSearch{
     text-align: right;
     color: #0941C1;
-    font-size: 14px;
+    font-size: 17px;
   }
 /*Profile*/
 .itemProfile{
@@ -289,6 +207,11 @@ color: #0941C1;
 .itemItemInfo p{
     color: white;
     font-style: italic;
+}
+
+.colabBox{
+  background-color: #BEC4F2;
+  margin: -3%;
 }
 
   .item-input-wrapper ~ .button{

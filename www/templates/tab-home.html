@@ -1,29 +1,48 @@
 <ion-view view-title="Color.in">
   <ion-content>
-    <ion-refresher
-    pulling-text="Pull To Refresh"
-    pulling-icon="ion-chevron-down"
-    spinner="ripple"
-    refreshing-text="Refreshing"
-    on-refresh="doRefresh()">
-  </ion-refresher>
+<link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
+  <ion-refresher
+      pulling-text="Pull To Refresh"
+      pulling-icon="ion-chevron-down"
+      spinner="ripple"
+      refreshing-text="Refreshing"
+      on-refresh="doRefresh()">
+    </ion-refresher>
     <div class="banner-container-home">
       <img class="banner-home" src="../img/bannercolorin.jpg">
     </div>
     <div ng-repeat="item in items" class="list card">
       <div class="item item-avatar itemHomeInfo">
-        <img ng-src="{{item}}">
-        <h2>ART NAME</h2>
-        <p>by Artist</p>
-      </div>
-    <div class="item item-body itemHome">
-      <img class="full-image" ng-src="{{item}}">
-        <div class="row">
-          <div class="col col-33"><i class="ion-ios-heart"></i> SENSE</div>
-          <div class="col col-33"><i class="ion-ios-chatboxes"></i> COLABS</div>
-          <div class="col col-33"><i class="ion-ios-eye"></i> VIEWS</div>
+        <img ng-src="{{item.profilephoto}}">
+        <div class="userInfoHome">
+          <h2 class="artName">{{item.artName}}</h2>
+          <p class="artArtist">{{item.username}}</p>
         </div>
-    </div>
+      </div>
+      <!-- <img class="full-image" ng-src="{{item}}" ng-click="goItem()"> -->
+      <img class="full-image" ng-src="{{item.artImg}}">
+    <div class="item item-body itemHome"></div>
+      <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
+        <div class={{sense.colorClass}} ng-repeat="sense in senses" ng-click="senseInsert(item.artName, sense.colorName)">
+          <div class={{sense.squareClass}}></div>
+        </div>
+      </div>
+      <div class="list colabBox" ng-class="{ 'hidden': ! showColabs }">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Colab" ng-model="collabText">
+          </label>
+          <button class="button button-small" ng-click="collabInsert(item.artName, collabText)">
+            Submit
+          </button>
+        </div>
+       </div>
+        <div class="row">
+          <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i> 100</div>
+          <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i> 120</div>
+          <div class="col col-33 colViewHome"><i class="ion-ios-eye"></i> 109</div>
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>
