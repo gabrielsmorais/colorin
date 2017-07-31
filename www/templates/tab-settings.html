@@ -1,0 +1,53 @@
+<ion-view name="tab-item" view-title="Color.in">
+  <ion-content class="perfil">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
+    <div class="banner-container-home">
+      <img class="banner-home" src="../img/bannercolorin.jpg">
+    </div>
+     <div class="row profile">
+       <div class="col"></div>
+       <div class="col col-40 itemProfile">
+            <img class="imgProfilePhoto" ng-src="../img/perry.png">
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- <div class="col profileInfo">
+      <h2 class="profileUsername">Username</h2>
+    </div> -->
+    <div class="userInfoSettings">
+    <div class="list userProfSettings" ng-class="{ 'hidden': ! showUserInfo }">
+      <div class="list list-inset profileSettingSettings">
+        <label class="item item-input">
+          <input type="text" placeholder="Profile Photo" ng-model="data.profilephoto">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Banner" ng-model="data.banner">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Description" ng-model="data.description">
+        </label>
+      </div>
+  </div>
+    <div class="list userAppSettings" ng-class="{ 'hidden': ! showAppInfo }">
+      <div class="list list-inset profileSettingSettings">
+        <label class="item item-input">
+          <input type="text" placeholder="Profile Photo" ng-model="data.profilephoto">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Banner" ng-model="data.banner">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Description" ng-model="data.description">
+        </label>
+      </div>
+  </div>
+    </div>
+    <button class="button button-outline button-assertive" ng-click="newpost()">
+         New Post
+     </button>
+  <button class="button button-outline button-energized" ng-click="showUserInfo = ! showUserInfo"> Profile Settings </button>
+  <button class="button button-outline button-balanced" ng-click="showAppInfo = ! showAppInfo"> App Settings </button>
+  <button class="button button-outline button-positive">Messages</button>
+  <button class="button button-outline button-dark">Log Out</button>
+  </ion-content>
+</ion-view>
