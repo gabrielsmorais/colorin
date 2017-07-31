@@ -15,7 +15,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', function($scope, $http, $state, $timeout, Sessao, $stateParams, SenseService) {
-
 $scope.senses = SenseService.todos();
 
   var usuario = Sessao.obter();
@@ -186,14 +185,61 @@ $scope.senses = SenseService.todos();
 
  $http.get('http://104.131.166.166:3000/profile/'+$stateParams.username).then(function(resposta2){
    $scope.items = resposta2.data;
- })
+
+    $scope.totalCollabs = 0;
+    for(item in $scope.items){
+      for(colla in $scope.items[item].collab){
+        $scope.totalCollabs = $scope.totalCollabs + 1;
+        }
+    }
+
+    $scope.totalSenses = 0;
+    for(item in $scope.items){
+      for(sens in $scope.items[item].sense){
+        $scope.totalSenses = $scope.totalSenses + 1;
+        }
+    }
+  })
+
 })
 
-.controller('ItemCtrl', function($scope, $state, $stateParams, $http, Sessao) {
+.controller('ItemCtrl', function($scope, $state, $stateParams, $http, Sessao, SenseService) {
+  $scope.senses = SenseService.todos();
 
  $http.get('http://104.131.166.166:3000/item/'+ $stateParams.artName).then(function(resposta){
    $scope.item = resposta.data[0];
  });
+
+ $scope.senseInsert = function(item, sense){
+   var usuario = Sessao.obter();
+   $scope.senseInserted = {}
+   $scope.senseInserted.artName = item;
+   $scope.senseInserted.senseColor = sense;
+   $scope.senseInserted.username = usuario.username;
+
+   $http.put('http://104.131.166.166:3000/item/'+$scope.senseInserted.artName+'/sense', $scope.senseInserted).then(function(response){
+     if(response.senseInserted){
+       console.log('Put executado com sucesso');
+     }
+     console.log('erro');
+   });
+   res.redirect('back');
+ }
+
+ $scope.collabInsert = function(item, collabText){
+   var usuario = Sessao.obter();
+   $scope.collabInserted = {}
+   $scope.collabInserted.artName = item;
+   $scope.collabInserted.collabText = collabText;
+   $scope.collabInserted.username = usuario.username;
+
+   $http.put('http://104.131.166.166:3000/item/'+$scope.collabInserted.artName+'/collab', $scope.collabInserted).then(function(response){
+     if(response.collabInserted){
+       console.log('Put executado com sucesso');
+     }
+     console.log('erro');
+   });
+ }
 
  $scope.backButton = function(){
    $state.go("tab.profile");

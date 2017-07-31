@@ -29,46 +29,16 @@
       <div class="list colabBox" ng-class="{ 'hidden': ! showColabs }">
         <div class="item item-input-inset">
           <label class="item-input-wrapper">
-            <input type="text" placeholder="Colab" ng-model="collabText">
+            <input type="text" placeholder="Collab" ng-model="collabText">
           </label>
           <button class="button button-small" ng-click="collabInsert(item.artName, collabText)">
             Submit
           </button>
         </div>
       </div>
-      <!-- <img class="full-image" ng-src="{{item.artImg}}">
-    <div class="item item-body itemHome"></div>
-      <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
-        <div class={{sense.colorClass}} ng-repeat="sense in senses" ng-click="senseInsert(item.artName, sense.colorName)">
-          <div class={{sense.squareClass}}></div>
-        </div>
-      </div>
-<<<<<<< HEAD
-      <div class="list colabBox" ng-class="{ 'hidden': ! showColabs }">
-        <div class="item item-input-inset">
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="Colab" ng-model="collabText">
-          </label>
-          <button class="button button-small" ng-click="collabInsert(item.artName, collabText)">
-            Submit
-          </button>
-        </div>
-       </div>
-=======
-          <div class="list colabBox" ng-class="{ 'hidden': ! showColabs }">
-          <div class="item item-input-inset">
-            <label class="item-input-wrapper">
-              <input type="text" placeholder="Colab">
-            </label>
-            <button class="button button-small" ng-click="showColabs = ! showColabs">
-              Submit
-            </button>
-          </div>
-        </div> -->
->>>>>>> a13621e81479260abc68a08cfc4a1e310844e8cf
         <div class="row">
-          <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i> 100</div>
-          <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i> 120</div>
+          <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i>{{item.sense.length}}</div>
+          <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i>{{item.collab.length}}</div>
           <div class="col col-33 colViewHome"  ng-click="goItem(item)"><i class="ion-ios-eye"></i> 109</div>
         </div>
       </div>
