@@ -2,8 +2,10 @@
   <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
   <ion-content>
     <label class="item item-input col-12">
+    <input type="text" class="col-12" placeholder="Search" ng-model="search.query" ng-click="buscar()">
+    <button class="button button-small">
       <i class="icon ion-search placeholder-icon" ></i>
-    <input type="text" class="col-12" placeholder="Search" ng-model="search.query" ng-enter="buscar()">
+    </button>
   </label>
   <div class="row rowSearch">
     <div ng-repeat="item in items" class="col col-50 itemSearch">

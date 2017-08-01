@@ -1,5 +1,6 @@
 <ion-view name="tab-item" view-title="Color.in">
   <ion-content class="perfil">
+    <!-- <div ng-show="mostrarProfile"> -->
     <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
     <div class="banner-container-home">
       <img class="banner-home" src="../img/bannercolorin.jpg">
@@ -11,9 +12,6 @@
       </div>
       <div class="col"></div>
     </div>
-    <!-- <div class="col profileInfo">
-      <h2 class="profileUsername">Username</h2>
-    </div> -->
     <div class="userInfoSettings">
     <div class="list userProfSettings" ng-class="{ 'hidden': ! showUserInfo }">
       <div class="list list-inset profileSettingSettings">
@@ -49,5 +47,8 @@
   <button class="button button-outline button-balanced" ng-click="showAppInfo = ! showAppInfo"> App Settings </button>
   <button class="button button-outline button-positive">Messages</button>
   <button class="button button-outline button-dark">Log Out</button>
+  <!-- </div> -->
+  <!-- <div class="profileDeslogado">
+  </div> -->
   </ion-content>
 </ion-view>

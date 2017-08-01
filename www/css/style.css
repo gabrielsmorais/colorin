@@ -1,5 +1,17 @@
 /*General*/
 
+.item-input-inset .item-input-wrapper input{
+    width: 100% !important;
+}
+
+.profileLogado{
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
 /*Header*/
 .bar .title.title-left {
     text-align: center;
@@ -57,6 +69,14 @@ color: #0941C1;
 .colabBox.hidden {
     max-height: 0;
 }
+
+/*.tab-nav.tabs.show{
+  display: flex !important;
+}
+
+.tab-nav.tabs{
+  display: none !important;
+}*/
 
 .item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image{
   top: 6px;

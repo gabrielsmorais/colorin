@@ -1,5 +1,28 @@
 angular.module('starter.controllers', [])
 
+.directive('back', ['$window', function($window) {
+        return {
+            restrict: 'A',
+            link: function (scope, elem, attrs) {
+                elem.bind('click', function () {
+                    $window.history.back();
+                });
+            }
+        };
+    }])
+
+.directive('hideTabs', function($rootScope) {
+    return {
+        restrict: 'A',
+        link: function($scope, $el) {
+            $rootScope.hideTabs = true;
+            $rootScope.$on('$stateChangeStart', function() {
+                $rootScope.hideTabs = false;
+            });
+        }
+    };
+})
+
 .directive('ngEnter', function() {
        return function(scope, element, attrs) {
            element.bind("keydown keypress", function(event) {
@@ -119,6 +142,9 @@ $scope.senses = SenseService.todos();
       }
       Sessao.inicializar(resposta.data);
 
+      // document.getElementsByClassName('.tab-nav.tabs').className = '.tab-nav.tabs.show';
+
+
       $state.go("tab.profile", {username: resposta.data.username});
     })
 
@@ -142,6 +168,12 @@ $scope.senses = SenseService.todos();
   '../img/flower.jpg',
   '../img/perry.png'
   ]
+  $scope.mostrarProfile = false;
+  var usuario = Sessao.obter();
+  if (usuario) {
+    $scope.mostrarProfile = true;
+  }
+  console.log(usuario);
   $scope.newpost = function(){
    $state.go('tab.registerp2');
  }
@@ -160,6 +192,26 @@ $scope.senses = SenseService.todos();
 })
 
 .controller('Registerp2Ctrl', function($scope, $state, $http, Sessao) {
+
+  $scope.enviar = function(){
+   var formData = new FormData();
+
+   var arquivo = document.getElementById("artImg").files[0];
+   formData.append("artImg", arquivo);
+   var xhr = new XMLHttpRequest();
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState == 4) {
+         var div = document.getElementById('mensagem');
+       var resposta = xhr.responseText;
+       div.innerHTML += resposta;
+       //console.log('phiyvguohjb');
+       }
+     }
+     //console.log('phiyvguohjb');
+     xhr.open("POST", "http://localhost:4000/api/upload");
+     xhr.send(formData);
+   }
+
    $scope.data = {};
    var usuario = Sessao.obter();
 

@@ -1,7 +1,7 @@
 <ion-view name="tab-registerp2" view-title="Color.in">
   <ion-nav-bar>
     <ion-nav-buttons side="left">
-        <button class="btn-white  ion-chevron-left header-icon-size back" onClick="javascript:history.go(-2)"></button>
+        <button class="btn-white  ion-chevron-left header-icon-size back" back></button>
     </ion-nav-buttons>
 </ion-nav-bar>
  <ion-content class="perfil">
@@ -14,9 +14,8 @@
        <label class="item item-input">
          <input type="text" placeholder="Art Description" ng-model="data.artDescription">
        </label>
-       <label class="item item-input">
-         <input type="text" placeholder="Art Img" ng-model="data.artImg">
-       </label>
+       <input type="file" placeholder="artImg" id="artImg" ng-value="'{{arquivo}}'"> {{arquivo}}
+       <button  id="enviarImagem" ng-click="enviar()">Enviar</button>
    </div>
    <button class="button button-block button-calm buttonFinish" ng-click="registerart()">Done</button>
 
