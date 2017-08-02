@@ -38,11 +38,52 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', function($scope, $http, $state, $timeout, Sessao, $stateParams, SenseService) {
-$scope.senses = SenseService.todos();
+
+$scope.randomColor = function(){
+  // for (var i = 0; i < $scope.items.length; i++) {
+    selectBG = Math.floor(Math.random() * 6);
+    switch (selectBG) {
+      case 0:
+        $scope.myDynamicClass = 'itemHomeInfoPurple';
+        $scope.myDynamicClass2 = 'itemHomePurple';
+        break;
+      case 1:
+        $scope.myDynamicClass = 'itemHomeInfoRed';
+        $scope.myDynamicClass2 = 'itemHomeRed';
+        break;
+      case 2:
+        $scope.myDynamicClass = 'itemHomeInfoOrange';
+        $scope.myDynamicClass2 = 'itemHomeOrange';
+        break;
+      case 3:
+        $scope.myDynamicClass = 'itemHomeInfoYellow';
+        $scope.myDynamicClass2 = 'itemHomeYellow';
+        break;
+        case 4:
+        $scope.myDynamicClass = 'itemHomeInfoGreen';
+        $scope.myDynamicClass2 = 'itemHomeGreen';
+        break;
+      case 5:
+        $scope.myDynamicClass = 'itemHomeInfoBlue';
+        $scope.myDynamicClass2 = 'itemHomeBlue';
+        break;
+      default:
+        break;
+    }
+  }
+// }
+window.onpageshow = $scope.randomColor();
+
+  $scope.goProfile = function(data){
+    $state.go('tab.profile', {username: data.username});
+  }
+
+  $scope.senses = SenseService.todos();
 
   var usuario = Sessao.obter();
     $http.get('http://104.131.166.166:3000/home').then(function(resposta){
     $scope.items = resposta.data;
+    console.log($scope.items.length);
  })
 
  $scope.senseInsert = function(item, sense){
@@ -57,6 +98,10 @@ $scope.senses = SenseService.todos();
        console.log('Put executado com sucesso');
      }
      console.log('erro');
+     var usuario = Sessao.obter();
+       $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+       $scope.items = resposta.data;
+    })
    });
  }
 
@@ -72,6 +117,10 @@ $scope.senses = SenseService.todos();
        console.log('Put executado com sucesso');
      }
      console.log('erro');
+     var usuario = Sessao.obter();
+       $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+       $scope.items = resposta.data;
+    })
    });
  }
 
@@ -102,6 +151,35 @@ $scope.senses = SenseService.todos();
 
 .controller('SearchCtrl', function($scope, $http, $state, $timeout) {
  $scope.search = {};
+
+ $scope.randomColor = function(){
+   // for (var i = 0; i < $scope.items.length; i++) {
+     selectBG = Math.floor(Math.random() * 6);
+     switch (selectBG) {
+       case 0:
+         $scope.myDynamicClass2 = 'rowSearchItemPurple';
+         break;
+       case 1:
+         $scope.myDynamicClass2 = 'rowSearchItemRed';
+         break;
+       case 2:
+         $scope.myDynamicClass2 = 'rowSearchItemOrange';
+         break;
+       case 3:
+         $scope.myDynamicClass2 = 'rowSearchItemYellow';
+         break;
+         case 4:
+         $scope.myDynamicClass2 = 'rowSearchItemGreen';
+         break;
+       case 5:
+         $scope.myDynamicClass2 = 'rowSearchItemBlue';
+         break;
+       default:
+         break;
+     }
+   }
+   window.onload = $scope.randomColor();
+
 
  $http.get('http://104.131.166.166:3000/home').then(function(resposta){
    $scope.items = resposta.data;
@@ -201,13 +279,13 @@ $scope.senses = SenseService.todos();
    xhr.onreadystatechange = function() {
      if (xhr.readyState == 4) {
          var div = document.getElementById('mensagem');
-       var resposta = xhr.responseText;
-       div.innerHTML += resposta;
+      //  var resposta = xhr.responseText;
+      //  div.innerHTML += resposta;
        //console.log('phiyvguohjb');
        }
      }
      //console.log('phiyvguohjb');
-     xhr.open("POST", "http://localhost:4000/api/upload");
+     xhr.open("POST", "http://104.131.166.166:4000/api/upload");
      xhr.send(formData);
    }
 
@@ -256,7 +334,46 @@ $scope.senses = SenseService.todos();
 })
 
 .controller('ItemCtrl', function($scope, $state, $stateParams, $http, Sessao, SenseService) {
-  $scope.senses = SenseService.todos();
+$scope.senses = SenseService.todos();
+
+$scope.randomColor = function(){
+  // for (var i = 0; i < $scope.items.length; i++) {
+    selectBG = Math.floor(Math.random() * 6);
+    switch (selectBG) {
+      case 0:
+        $scope.myDynamicClass = 'itemHomeInfoPurple';
+        $scope.myDynamicClass2 = 'itemHomePurple';
+        break;
+      case 1:
+        $scope.myDynamicClass = 'itemHomeInfoRed';
+        $scope.myDynamicClass2 = 'itemHomeRed';
+        break;
+      case 2:
+        $scope.myDynamicClass = 'itemHomeInfoOrange';
+        $scope.myDynamicClass2 = 'itemHomeOrange';
+        break;
+      case 3:
+        $scope.myDynamicClass = 'itemHomeInfoYellow';
+        $scope.myDynamicClass2 = 'itemHomeYellow';
+        break;
+        case 4:
+        $scope.myDynamicClass = 'itemHomeInfoGreen';
+        $scope.myDynamicClass2 = 'itemHomeGreen';
+        break;
+      case 5:
+        $scope.myDynamicClass = 'itemHomeInfoBlue';
+        $scope.myDynamicClass2 = 'itemHomeBlue';
+        break;
+      default:
+        break;
+    }
+  }
+// }
+window.onpageshow = $scope.randomColor();
+
+$scope.goProfile = function(data){
+  $state.go('tab.profile', {username: data.username});
+}
 
  $http.get('http://104.131.166.166:3000/item/'+ $stateParams.artName).then(function(resposta){
    $scope.item = resposta.data[0];

@@ -12,15 +12,15 @@
       <img class="banner-home" src="../img/bannercolorin.jpg">
     </div>
     <div ng-repeat="item in items" class="list card">
-      <div class="item item-avatar itemHomeInfo">
+      <div ng-class="myDynamicClass" class="item item-avatar itemHomeInfo">
         <img ng-src="{{item.profilephoto}}">
         <div class="userInfoHome">
           <h2 class="artName">{{item.artName}}</h2>
-          <p class="artArtist">{{item.username}}</p>
+          <p ng-click="goProfile(item)">{{item.username}}</p>
         </div>
       </div>
       <img class="full-image" ng-src="{{item.artImg}}">
-      <div class="item item-body itemHome"></div>
+      <div ng-class="myDynamicClass2" class="item item-body itemHome"></div>
       <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
         <div class={{sense.colorClass}} ng-repeat="sense in senses" ng-click="senseInsert(item.artName, sense.colorName)">
           <div class={{sense.squareClass}}></div>
