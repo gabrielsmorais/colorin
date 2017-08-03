@@ -41,8 +41,11 @@ angular.module('starter.controllers', [])
 $scope.senses = SenseService.todos();
 
   var usuario = Sessao.obter();
+
     $http.get('http://104.131.166.166:3000/home').then(function(resposta){
     $scope.items = resposta.data;
+
+
  })
 
  $scope.senseInsert = function(item, sense){
@@ -78,20 +81,19 @@ $scope.senses = SenseService.todos();
  $scope.viewInsert = function(item){
    var usuario = Sessao.obter();
    $scope.viewInserted = {}
-   $scope.viewInserted.artName = item.artName;
-   $scope.viewInserted.username = $scope.usuario.username;
+   $scope.viewInserted.artName = item;
+   $scope.viewInserted.username = usuario.username;
 
-   $http.put('http://104.131.166.166:3000/'+$scope.viewInserted.artName+'/view', $scope.viewInserted).then(function(response){
+   $http.put('http://104.131.166.166:3000/item/'+$scope.viewInserted.artName+'/view', $scope.viewInserted).then(function(response){
      if(response.viewInserted){
        console.log('Put executado com sucesso');
      }
      console.log('erro');
-   });
- }
-
+    });
+  }
   $scope.goItem = function(item){
     $state.go('tab.item', {artName: item.artName});
-}
+  }
 
   $scope.doRefresh = function() {
     $timeout( function() {
@@ -119,6 +121,21 @@ $scope.senses = SenseService.todos();
      });
    }
  };
+
+ $scope.viewInsert = function(item){
+   var usuario = Sessao.obter();
+   $scope.viewInserted = {}
+   $scope.viewInserted.artName = item;
+   $scope.viewInserted.username = usuario.username;
+
+   $http.put('http://104.131.166.166:3000/item/'+$scope.viewInserted.artName+'/view', $scope.viewInserted).then(function(response){
+     if(response.viewInserted){
+       console.log('Put executado com sucesso');
+     }
+     console.log('erro');
+    });
+  }
+
  $scope.goItem = function(item){
    $state.go('tab.item', {artName: item.artName});
  }
@@ -192,7 +209,7 @@ $scope.senses = SenseService.todos();
 
 .controller('Registerp2Ctrl', function($scope, $state, $http, Sessao) {
 
-  $scope.enviar = function(){
+  $scope.enviarImg = function(){
    var formData = new FormData();
 
    var arquivo = document.getElementById("artImg").files[0];
@@ -202,12 +219,12 @@ $scope.senses = SenseService.todos();
      if (xhr.readyState == 4) {
          var div = document.getElementById('mensagem');
        var resposta = xhr.responseText;
-       div.innerHTML += resposta;
+       div.innerHTML += resposta.message;
        //console.log('phiyvguohjb');
        }
      }
      //console.log('phiyvguohjb');
-     xhr.open("POST", "http://localhost:4000/api/upload");
+     xhr.open("POST", "http://104.131.166.166:3000/api/upload");
      xhr.send(formData);
    }
 
@@ -223,6 +240,21 @@ $scope.senses = SenseService.todos();
 
 .controller('ProfileCtrl', function($scope, $state, $stateParams, $http, Sessao) {
  var usuario = Sessao.obter();
+
+ $scope.viewInsert = function(item){
+   var usuario = Sessao.obter();
+   $scope.viewInserted = {}
+   $scope.viewInserted.artName = item;
+   $scope.viewInserted.username = usuario.username;
+
+   $http.put('http://104.131.166.166:3000/item/'+$scope.viewInserted.artName+'/view', $scope.viewInserted).then(function(response){
+     if(response.viewInserted){
+       console.log('Put executado com sucesso');
+     }
+     console.log('erro');
+    });
+  }
+
  $scope.goItem = function(item){
    $state.go('tab.item', {artName: item.artName});
 }
@@ -293,7 +325,7 @@ $scope.senses = SenseService.todos();
    });
  }
 
- $scope.backButton = function(){
-   $state.go("tab.profile");
- }
+$scope.backButton = function(){
+  $state.go("tab.profile");
+}
 })

@@ -13,13 +13,13 @@
     </div>
     <div ng-repeat="item in items" class="list card">
       <div class="item item-avatar itemHomeInfo">
-        <img ng-src="{{item.profilephoto}}">
+        <img ng-src="http://104.131.166.166/{{item.banner}}">
         <div class="userInfoHome">
           <h2 class="artName">{{item.artName}}</h2>
           <p class="artArtist">{{item.username}}</p>
         </div>
       </div>
-      <img class="full-image" ng-src="{{item.artImg}}">
+      <img class="full-image" ng-src="http://104.131.166.166/{{item.artImg}}">
       <div class="item item-body itemHome"></div>
       <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
         <div class={{sense.colorClass}} ng-repeat="sense in senses" ng-click="senseInsert(item.artName, sense.colorName)">
@@ -39,7 +39,7 @@
         <div class="row">
           <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i>{{item.sense.length}}</div>
           <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i>{{item.collab.length}}</div>
-          <div class="col col-33 colViewHome"  ng-click="goItem(item)"><i class="ion-ios-eye"></i> 109</div>
+          <div class="col col-33 colViewHome"  ng-click="viewInsert(item.artName); goItem(item)"><i class="ion-ios-eye"></i>{{item.view.length}}</div>
         </div>
       </div>
   </ion-content>

@@ -36,7 +36,7 @@
   <div class="row">
     <div class="col col-33 colSenseHome" ng-click="showSenses = ! showSenses"><i class="ion-ios-heart"></i>{{item.sense.length}}</div>
     <div class="col col-33 colColabHome" ng-click="showColabs = ! showColabs"><i class="ion-ios-chatboxes"></i>{{item.collab.length}}</div>
-    <div class="col col-33 colViewHome"><i class="ion-ios-eye" ng-click="view\Item()"></i> 109</div>
+    <div class="col col-33 colViewHome"><i class="ion-ios-eye" ng-click="view\Item()"></i>{{item.view.length}}</div>
   </div>
       <div class="col itemColabs" ng-repeat="colla in item.collab">
         <strong>{{  colla.username}} </strong>{{colla.collabText}}</div>
