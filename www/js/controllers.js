@@ -85,7 +85,9 @@ window.onpageshow = $scope.randomColor();
     $http.get('http://104.131.166.166:3000/home').then(function(resposta){
     $scope.items = resposta.data;
 
-
+    for(item in $scope.items){
+    $scope.max = Math.max.apply(Math,$scope.data.map(function(item){return item.age;}));
+    }
  })
 
  $scope.senseInsert = function(item, sense){
@@ -100,6 +102,7 @@ window.onpageshow = $scope.randomColor();
        console.log('Put executado com sucesso');
      }
      console.log('erro');
+     
      var usuario = Sessao.obter();
        $http.get('http://104.131.166.166:3000/home').then(function(resposta){
        $scope.items = resposta.data;

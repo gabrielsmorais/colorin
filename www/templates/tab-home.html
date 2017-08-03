@@ -12,25 +12,15 @@
       <img class="banner-home" src="../img/bannercolorin.jpg">
     </div>
     <div ng-repeat="item in items" class="list card">
-<<<<<<< HEAD
       <div class="item item-avatar itemHomeInfo">
-        <img ng-src="http://104.131.166.166/{{item.banner}}">
-=======
-      <div ng-class="myDynamicClass" class="item item-avatar itemHomeInfo">
-        <img ng-src="{{item.profilephoto}}">
->>>>>>> 35a8895594be3c441a143dc106c12aeb575adcad
+        <img ng-src="{{item.banner}}">
         <div class="userInfoHome">
           <h2 class="artName">{{item.artName}}</h2>
           <p ng-click="goProfile(item)">{{item.username}}</p>
         </div>
       </div>
-<<<<<<< HEAD
-      <img class="full-image" ng-src="http://104.131.166.166/{{item.artImg}}">
-      <div class="item item-body itemHome"></div>
-=======
       <img class="full-image" ng-src="{{item.artImg}}">
-      <div ng-class="myDynamicClass2" class="item item-body itemHome"></div>
->>>>>>> 35a8895594be3c441a143dc106c12aeb575adcad
+      <div class="item item-body itemHome"></div>
       <div class="row rowSenses" ng-class="{ 'hidden': ! showSenses }">
         <div class={{sense.colorClass}} ng-repeat="sense in senses" ng-click="senseInsert(item.artName, sense.colorName)">
           <div class={{sense.squareClass}}></div>
