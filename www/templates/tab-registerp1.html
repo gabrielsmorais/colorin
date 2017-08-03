@@ -26,12 +26,13 @@
             <label class="item item-input">
               <input type="text" placeholder="Username" ng-model="data.username">
             </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Password" ng-model="data.password">
+            <label class="item item-input password">
+              <input type="password" placeholder="Password" ng-model="data.password">
             </label>
-            <label class="item item-input">
-              <input type="text" placeholder="Profile URL" ng-model="data.url">
-            </label>
+            <input type="file" placeholder="artImg" id="artImg" fileread="data.profilephoto"> {{arquivo}}
+            <button  ng-click="enviarBanner()">Enviar</button>
+             <div id="mensagem">
+             </div>
                 <!-- <label class="item item-input item-floating-label">
                 <span class="input-label">Confirm Password</span>
                 <input type="text" placeholder="Confirm Password" ng-model="dados.nome">

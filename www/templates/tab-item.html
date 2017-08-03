@@ -12,7 +12,7 @@
   </div>
   <div class="list card">
     <div ng-class="myDynamicClass" class="item item-avatar itemHomeInfo">
-      <img src="../img/perry.png">
+      <img src="{{item.profilephoto}}">
       <h2>{{item.artName}}</h2>
       <p ng-click="goProfile(item)">{{item.username}}</p>
     </div>

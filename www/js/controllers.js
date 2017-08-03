@@ -104,9 +104,7 @@ window.onpageshow = $scope.randomColor();
     $http.get('http://104.131.166.166:3000/home').then(function(resposta){
     $scope.items = resposta.data;
 
-    for(item in $scope.items){
-    $scope.max = Math.max.apply(Math,$scope.data.map(function(item){return item.age;}));
-    }
+
  })
 
  $scope.senseInsert = function(item, sense){
@@ -121,7 +119,6 @@ window.onpageshow = $scope.randomColor();
        console.log('Put executado com sucesso');
      }
      console.log('erro');
-     
      var usuario = Sessao.obter();
        $http.get('http://104.131.166.166:3000/home').then(function(resposta){
        $scope.items = resposta.data;
@@ -168,6 +165,9 @@ window.onpageshow = $scope.randomColor();
   $scope.doRefresh = function() {
     $timeout( function() {
       $scope.$broadcast('scroll.refreshComplete');
+      $http.get('http://104.131.166.166:3000/home').then(function(resposta){
+         $scope.items = resposta.data;
+      })
     }, 3000);
   }
 })
@@ -315,6 +315,26 @@ window.onpageshow = $scope.randomColor();
 
 
 .controller('Registerp1Ctrl', function($scope, $state, $http, Sessao) {
+
+  $scope.enviarBanner = function(){
+   var formData = new FormData();
+
+   var arquivo = document.getElementById("artImg").files[0];
+   formData.append("artImg", arquivo);
+   var xhr = new XMLHttpRequest();
+   xhr.onreadystatechange = function() {
+     if (xhr.readyState == 4) {
+         var div = document.getElementById('mensagem');
+       var resposta = xhr.responseText;
+       div.innerHTML += resposta.message;
+       //console.log('phiyvguohjb');
+       }
+     }
+     //console.log('phiyvguohjb');
+     xhr.open("POST", "http://104.131.166.166:3000/api/upload");
+     xhr.send(formData);
+   }
+
     $scope.data = {};
 
     $scope.register = function(){
@@ -353,6 +373,7 @@ window.onpageshow = $scope.randomColor();
        $http.post('http://104.131.166.166:3000/'+usuario.username+'/registerp2', $scope.data).then(function(resposta){
          $state.go('tab.item', {artName: resposta.data.artName});
        })
+
      }
 })
 
