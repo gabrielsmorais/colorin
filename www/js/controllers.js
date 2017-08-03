@@ -207,6 +207,25 @@ window.onpageshow = $scope.randomColor();
  }
 })
 
+.controller('TutorialCtrl', function($scope, $state, $http, Sessao) {
+  $scope.swiper = {};
+
+      $scope.onReadySwiper = function (swiper) {
+
+          swiper.on('slideChangeStart', function () {
+              console.log('slide start');
+          });
+
+          swiper.on('onSlideChangeEnd', function () {
+              console.log('slide end');
+          });
+      };
+      $scope.goLogin = function(){
+        $state.go('tab.login');
+      }
+})
+
+
 .controller('LoginCtrl', function($scope, $state, $http, Sessao) {
   $scope.data = {};
 
@@ -300,6 +319,38 @@ window.onpageshow = $scope.randomColor();
 })
 
 .controller('ProfileCtrl', function($scope, $state, $stateParams, $http, Sessao) {
+
+
+   $scope.randomColor = function(){
+     // for (var i = 0; i < $scope.items.length; i++) {
+       selectBG = Math.floor(Math.random() * 6);
+       switch (selectBG) {
+         case 0:
+           $scope.myDynamicClass2 = 'rowSearchItemPurple';
+           break;
+         case 1:
+           $scope.myDynamicClass2 = 'rowSearchItemRed';
+           break;
+         case 2:
+           $scope.myDynamicClass2 = 'rowSearchItemOrange';
+           break;
+         case 3:
+           $scope.myDynamicClass2 = 'rowSearchItemYellow';
+           break;
+           case 4:
+           $scope.myDynamicClass2 = 'rowSearchItemGreen';
+           break;
+         case 5:
+           $scope.myDynamicClass2 = 'rowSearchItemBlue';
+           break;
+         default:
+           break;
+       }
+     }
+
+     window.onpageshow = $scope.randomColor();
+
+
  var usuario = Sessao.obter();
  $scope.goItem = function(item){
    $state.go('tab.item', {artName: item.artName});
