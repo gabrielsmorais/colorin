@@ -14,7 +14,7 @@
        <label class="item item-input">
          <input type="text" placeholder="Art Description" ng-model="data.artDescription">
        </label>
-       <input type="file" placeholder="artImg" id="artImg" ng-value="'{{arquivo}}'"> {{arquivo}}
+       <input type="file" placeholder="artImg" id="artImg" fileread="data.artImg"> {{arquivo}}
        <button  ng-click="enviarImg()">Enviar</button>
         <div id="mensagem">
         </div>
