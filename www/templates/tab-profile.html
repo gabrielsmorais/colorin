@@ -1,4 +1,7 @@
 <ion-view view-title="Color.in" >
+  <ion-nav-buttons side="left">
+      <button class="btn-white  ion-chevron-left header-icon-size back" back  ></button>
+  </ion-nav-buttons>
   <ion-content>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans" rel="stylesheet">
     <div class="banner-container-profile">
@@ -14,7 +17,7 @@
     </div>
       <div class="col profileInfo">
         <h2 class="profileUsername">{{data.username}}</h2>
-        <p class="profileDescription">{{data.description}}.</p>
+        <p class="profileDescription">{{data.description}}</p>
       </div>
       <div class="row profileStatus">
         <div class="col col-33 colSenseHome"><i class="ion-ios-heart"></i>{{totalSenses}}</div>
@@ -92,7 +95,7 @@
           </div>
             </div>
           </div>
-          <div class="row rowSearchItem" ng-click="viewInsert(item.artName); goItem(item)">
+          <div ng-class="myDynamicClass2" class="row rowSearchItem" ng-click="viewInsert(item.artName); goItem(item)">
             <div class="col col-33 colSenseSearch"><i class="ion-ios-heart"></i>{{item.sense.length}}</div>
             <div class="col col-33 colColabSearch"><i class="ion-ios-chatboxes"></i>{{item.collab.length}}</div>
             <div class="col col-33 colViewSearch"><i class="ion-ios-eye"></i>{{item.view.length}}</div>

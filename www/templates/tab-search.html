@@ -16,7 +16,7 @@
       </div>
         </div>
       </div>
-      <div class="row rowSearchItem" ng-click="viewInsert(item.artName); goItem(item)">
+      <div ng-class="myDynamicClass2" class="row rowSearchItem" ng-click="viewInsert(item.artName); goItem(item)">
         <div class="col col-33 colSenseSearch"><i class="ion-ios-heart"></i>{{item.sense.length}}</div>
         <div class="col col-33 colColabSearch"><i class="ion-ios-chatboxes"></i>{{item.collab.length}}</div>
         <div class="col col-33 colViewSearch"><i class="ion-ios-eye"></i>{{item.view.length}}</div>

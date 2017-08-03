@@ -20,7 +20,7 @@ angular.module('starter.services', [])
       {colorName: "senseOrange",colorClass: "col colOrange", squareClass: "square squareOrange"},
       {colorName: "senseYellow", colorClass: "col colYellow", squareClass: "square squareYellow"},
       {colorName: "senseGreen", colorClass: "col colGreen", squareClass: "square squareGreen"},
-      {colorName: "senseOrange", colorBlue: "col colBlue", squareClass: "square squareBlue"},
+      {colorName: "senseBlue", colorClass: "col colBlue", squareClass: "square squareBlue"},
       {colorName: "senseWhite", colorClass: "col colWhite", squareClass: "square squareWhite"}
     ];
   return {
